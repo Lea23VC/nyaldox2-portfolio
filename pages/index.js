@@ -44,9 +44,10 @@ export default function Home() {
 
     <Grid container spacing={1}> 
       <Grid container item xs={6} lg={6} spacing={3}>
-        <Test/>
+        
       </Grid>
     </Grid>
+    <Test/>
     </div>
 
     </>

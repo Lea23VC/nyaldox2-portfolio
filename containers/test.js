@@ -13,49 +13,46 @@ const useStyles = makeStyles({
 
   card1: { 
     position: "relative",
-    
+    marginTop: "50px"
     
   },
   card2: { 
     
-   
-
-  
-
- 
-
+   top: "0",
+    
     position: "absolute",
-    top: "180px"
+    
+ 
     
   },
   card3: { 
-    
+    top: "0",
     position: "absolute",
-    top: "180px"
- 
+  
+    
 
   },
   card4: { 
-    
+    top: "0",
     position: "absolute",
-    top: "180px"
+  
  
   
   },
   card5: { 
     
-    
+    top: "0",
     position: "absolute",
-    top: "180px"
+    
  
   },
   paper: {
 
-    margin: "100px",
-    padding: "50px",
-    textAlign: 'center',
-    backgroundColor: "grey",
     
+    padding: "30px",
+    display: "inline-block",
+    position: "relative",
+    backgroundColor: "white",
     borderRadius: "20px",
     
     
@@ -63,26 +60,30 @@ const useStyles = makeStyles({
 
   },
 
+  
+
 });
 
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
-const trans1 = (x, y) => `translate3d(${x / 20}px,${y /2.5}px,0)`
-const trans2 = (x, y) => `translate3d(${x / 20}px,${y / 3 }px,0)`
-const trans3 = (x, y) => `translate3d(${x / 20}px,${y / 3.5 }px,0)`
-const trans4 = (x, y) => `translate3d(${x / 20}px,${y / 4}px,0)`
-const trans5 = (x, y) => `translate3d(${x / 20}px,${y / 4.5}px,0)`
+const trans1 = (x, y) => `translate3d(${x / 20}px,${y /20}px,0)`
+const trans2 = (x, y) => `translate3d(${x / 20}px,${y / 70 }px,0)`
+const trans3 = (x, y) => `translate3d(${x / 20}px,${y / 25}px,0)`
+const trans4 = (x, y) => `translate3d(${x / 20}px,${y / 20 - 80}px,0)`
+const trans5 = (x, y) => `translate3d(${x / 20}px,${y / 30}px,0)`
 export default function parallax() {
   const [props, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 550, friction: 140 } }))
   const classes = useStyles();
   return(
 
     <>
+
+  
       <Paper variant="outlined" className={classes.paper} onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
-      <animated.div  style={{ transform: props.xy.to(trans4) }} > 
+      <animated.div  className={classes.card1} style={{ transform: props.xy.to(trans4) }} > 
       
       <Image
-      className={classes.card1}
+      
         src="/images/parallax/cielo.png"
         alt="Picture of the author"
         width={540}
@@ -97,8 +98,8 @@ export default function parallax() {
       
         src="/images/parallax/cerros.png"
         alt="Picture of the author"
-        width={520}
-        height={520}
+        width={540}
+        height={540}
       />
       
       
@@ -111,8 +112,8 @@ export default function parallax() {
       
         src="/images/parallax/Arbustos2.png"
         alt="Picture of the author"
-        width={500}
-        height={500}
+        width={540}
+        height={540}
       />
 
       </animated.div>
@@ -124,8 +125,8 @@ export default function parallax() {
       
         src="/images/parallax/arbusto1.png"
         alt="Picture of the author"
-        width={500}
-        height={500}
+        width={540}
+        height={540}
       />
       
       
@@ -139,13 +140,14 @@ export default function parallax() {
       
         src="/images/parallax/pjs.png"
         alt="Picture of the author"
-        width={500}
-        height={500}
+        width={540}
+        height={540}
       />
       
       </animated.div>
 
     </Paper>
+  
     </>
 
   )
