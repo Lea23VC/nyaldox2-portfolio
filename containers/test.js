@@ -53,6 +53,14 @@ const useStyles = makeStyles({
     
     marginRight: "30px",
   },
+
+  card6: { 
+    
+    bottom: '0',
+    position: "absolute",
+    
+    marginRight: "30px",
+  },
   paper: {
 
     marginTop: "100px",
@@ -79,6 +87,7 @@ const trans2 = (x, y) => `translate3d(${x / 20}px,${y / 20 }px,0)`
 const trans3 = (x, y) => `translate3d(${x / 20}px,${y / 25}px,0)`
 const trans4 = (x, y) => `translate3d(${x / 20}px,${y / 20 }px,0)`
 const trans5 = (x, y) => `translate3d(${x / 20}px,${y / 15 -10}px,0)`
+const trans6 = (x, y) => `translate3d(${x / 10}px,${y / 15 -15}px,0)`
 export default function parallax() {
   const [props, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 550, friction: 140 } }))
   const classes = useStyles();
@@ -95,11 +104,27 @@ export default function parallax() {
         src="/images/parallax/cielo.png"
         alt="Picture of the author"
         width={540}
-        height={720}
+        height={540}
       />
       
      
       </animated.div>
+
+
+      <animated.div  className={classes.card6} style={{ transform: props.xy.to(trans6) }} > 
+      
+      <Image
+      
+        src="/images/parallax/luna.png"
+        alt="Picture of the author"
+        width={540}
+        height={540}
+      />
+      
+     
+      </animated.div>
+
+
       <animated.div  className={classes.card5}  style={{ transform: props.xy.to(trans5) }} > 
       
       <Image
