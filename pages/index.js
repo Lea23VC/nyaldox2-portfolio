@@ -7,6 +7,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Test from '../containers/test'
 import Grid from '@material-ui/core/Grid';
 
+import InstagramFeed  from 'react-ig-feed'
+import 'react-ig-feed/dist/index.css'
 
 
 const useStyles = makeStyles((theme) => ({ 
@@ -47,6 +49,8 @@ export default function Home() {
       <Test/>
       </Grid>
     </Grid>
+
+    <InstagramFeed token={'IGQVJVQ0NiSmlWdEF4RjA4N3B0bW85ODZAseTBleWdCRVl1ekFqblFhTUNnYlFidElCLTJWdmV6NHpaU1J1blhYWHZANcmpXTkxQYUNvT1Y0MHZAiV081SXkxd3BuR3MwZAXhGR0pGNEJrTjZAsdURGZADFZARwZDZD'}  counter="6"/>
 
    
     
