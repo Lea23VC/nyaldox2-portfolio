@@ -5,10 +5,10 @@ import {useSpring, animated} from 'react-spring'
 import { makeStyles } from '@material-ui/core/styles';
 
 import Test from '../containers/test'
+import Instagram from '../containers/instagram'
 import Grid from '@material-ui/core/Grid';
 
-import InstagramFeed  from 'react-ig-feed'
-import 'react-ig-feed/dist/index.css'
+
 
 
 const useStyles = makeStyles((theme) => ({ 
@@ -44,13 +44,17 @@ export default function Home() {
     <animated.div style={props}><Typography align="center" variant="h2" >Aldo Cabrera Arratia</Typography></animated.div>
 
 
-    <Grid container > 
-      <Grid item align="center" xs={12} lg={12} spacing={0} >
+    <Grid container> 
+      <Grid item align="center" xs={12} lg={12} >
       <Test/>
       </Grid>
+      
+      <Instagram/>
+      
     </Grid>
 
-    <InstagramFeed token={'IGQVJVQ0NiSmlWdEF4RjA4N3B0bW85ODZAseTBleWdCRVl1ekFqblFhTUNnYlFidElCLTJWdmV6NHpaU1J1blhYWHZANcmpXTkxQYUNvT1Y0MHZAiV081SXkxd3BuR3MwZAXhGR0pGNEJrTjZAsdURGZADFZARwZDZD'}  counter="6"/>
+
+    
 
    
     
