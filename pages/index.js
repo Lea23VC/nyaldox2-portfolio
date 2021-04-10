@@ -6,15 +6,24 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Test from '../containers/test'
 
-const useStyles = makeStyles((theme) => ({ 
+
+
+const useStyles = makeStyles({ 
+
+  test: { 
+    
+    
+    
+  }
 
 
 
-}));
+});
 
 
 export default function Home() {
 
+  const classes = useStyles();
   const props = useSpring({opacity: 1, from: {opacity: 0}})
   const propsDonut = useSpring({ value: 100, from: { value: 0 } })
   const [flipped, set] = useState(false)
@@ -28,10 +37,10 @@ export default function Home() {
     
     <>
     
+    <div className={classes.test}>
     <animated.div style={props}><Typography align="center" variant="h1">Aldo Cabrera Arratia</Typography></animated.div>
-    <div onClick={() => set(state => !state)}>
-      <animated.div class="c back" style={{ opacity: opacity.interpolate(o => 1 - o), transform }} />
-      <animated.div class="c front" style={{ opacity, transform: transform.interpolate(t => `${t} rotateX(180deg)`) }} />
+
+    <Test/>
     </div>
 
     </>
