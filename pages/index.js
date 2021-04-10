@@ -42,12 +42,12 @@ export default function Home() {
     <animated.div style={props}><Typography align="center" variant="h2" >Aldo Cabrera Arratia</Typography></animated.div>
 
 
-    <Grid container spacing={1}> 
-      <Grid container item xs={6} lg={6} spacing={3}>
-        
+    <Grid container> 
+      <Grid item xs={6} lg={12} spacing={3}>
+      <Test/>
       </Grid>
     </Grid>
-    <Test/>
+    
     </div>
 
     </>

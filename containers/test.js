@@ -13,12 +13,17 @@ const useStyles = makeStyles({
 
   card1: { 
     position: "relative",
-    marginTop: "50px"
+    maxWidth: '100%',
+    height: 'auto',
+    marginBottom: '',
+    
+    
     
   },
   card2: { 
     
    top: "0",
+    marginRight: "30px",
     
     position: "absolute",
     
@@ -29,14 +34,14 @@ const useStyles = makeStyles({
     top: "0",
     position: "absolute",
   
-    
+    marginRight: "30px",
 
   },
   card4: { 
     top: "0",
     position: "absolute",
   
- 
+    marginRight: "30px",
   
   },
   card5: { 
@@ -44,17 +49,18 @@ const useStyles = makeStyles({
     top: "0",
     position: "absolute",
     
- 
+    marginRight: "30px",
   },
   paper: {
 
-    
+    marginTop: "250px",
     padding: "30px",
+    
     display: "inline-block",
     position: "relative",
     backgroundColor: "white",
     borderRadius: "20px",
-    
+    overflow:'visible'
     
     
 
@@ -66,11 +72,11 @@ const useStyles = makeStyles({
 
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
-const trans1 = (x, y) => `translate3d(${x / 20}px,${y /20}px,0)`
-const trans2 = (x, y) => `translate3d(${x / 20}px,${y / 70 }px,0)`
+const trans1 = (x, y) => `translate3d(${x / 20}px,${y /20 - 10}px,0)`
+const trans2 = (x, y) => `translate3d(${x / 20}px,${y / 20 }px,0)`
 const trans3 = (x, y) => `translate3d(${x / 20}px,${y / 25}px,0)`
-const trans4 = (x, y) => `translate3d(${x / 20}px,${y / 20 - 80}px,0)`
-const trans5 = (x, y) => `translate3d(${x / 20}px,${y / 30}px,0)`
+const trans4 = (x, y) => `translate3d(${x / 20}px,${y / 20 - 200}px,0)`
+const trans5 = (x, y) => `translate3d(${x / 20}px,${y / 15}px,0)`
 export default function parallax() {
   const [props, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 550, friction: 140 } }))
   const classes = useStyles();
