@@ -41,7 +41,11 @@ export default function Home() {
     <>
     
     <div className={classes.test}>
-    <animated.div style={props}><Typography align="center" variant="h2" >Aldo Cabrera Arratia</Typography></animated.div>
+    <animated.div style={props}><Typography align="center" variant="h1" >Aldo Cabrera A.</Typography>
+    
+    <Typography align="center" variant="h2" >Animador Digital / Ilustrador</Typography>
+    
+    </animated.div>
 
 
     <Grid container> 
