@@ -5,10 +5,11 @@ import {useSpring, animated} from 'react-spring'
 import { makeStyles } from '@material-ui/core/styles';
 
 import Test from '../containers/test'
+import Grid from '@material-ui/core/Grid';
 
 
 
-const useStyles = makeStyles({ 
+const useStyles = makeStyles((theme) => ({ 
 
   test: { 
     
@@ -18,7 +19,7 @@ const useStyles = makeStyles({
 
 
 
-});
+}));
 
 
 export default function Home() {
@@ -38,9 +39,14 @@ export default function Home() {
     <>
     
     <div className={classes.test}>
-    <animated.div style={props}><Typography align="center" variant="h1">Aldo Cabrera Arratia</Typography></animated.div>
+    <animated.div style={props}><Typography align="center" variant="h2" >Aldo Cabrera Arratia</Typography></animated.div>
 
-    <Test/>
+
+    <Grid container spacing={1}> 
+      <Grid container item xs={6} lg={6} spacing={3}>
+        <Test/>
+      </Grid>
+    </Grid>
     </div>
 
     </>
