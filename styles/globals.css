@@ -63,3 +63,52 @@ label{
   
 }
 
+
+@font-face {
+  font-family: "Supernett-cn";
+  src: url("/fonts/Supernett-cn/Supernettcn-LightCondensed.otf");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Supernett-cn";
+  src: url("/fonts/Supernett-cn/Supernettcn-LightCondItalic.otf");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Supernett-cn";
+  src: url("/fonts/Supernett-cn/Supernettcn-Condensed.otf");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Supernett-cn";
+  src: url("/fonts/Supernett-cn/Supernettcn-CondensedItalic.otf");
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Supernett-cn";
+  src: url("/fonts/Supernett-cn/Supernettcn-BoldCondensed.otf");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Supernett-cn";
+  src: url("/fonts/Supernett-cn/Supernettcn-BoldCondItalic.otf");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
