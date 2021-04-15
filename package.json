@@ -10,14 +10,17 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/styles": "^4.11.3",
+    "lodash-es": "^4.17.21",
     "next": "^10.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-ig-feed": "^1.0.4",
     "react-native-background-audio": "^1.1.4",
-    "react-spring": "^9.1.0"
+    "react-spring": "^9.1.0",
+    "react-with-gesture": "^4.0.8"
   },
   "devDependencies": {
+    "@types/lodash-es": "^4.17.4",
     "babel-plugin-styled-components": "^1.12.0"
   }
 }

@@ -70,9 +70,10 @@ const useStyles = makeStyles({
     position: "relative",
     backgroundColor: "white",
     borderRadius: "20px",
-    overflow:'visible',
+    overflow:'hidden',
     
     marginBottom: "100px",
+    
 
   },
 

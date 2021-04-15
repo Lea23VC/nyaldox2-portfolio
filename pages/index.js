@@ -5,6 +5,7 @@ import { useSpring, animated } from 'react-spring'
 import { makeStyles } from '@material-ui/core/styles';
 
 import Test from '../containers/test'
+import Pull from '../containers/pull'
 import Instagram from '../containers/instagram'
 import Grid from '@material-ui/core/Grid';
 
@@ -109,14 +110,10 @@ export default function Home() {
         <Grid container justify="center">
           <Grid className={classes.logo} item >
             <animated.div style={props}>
-              <Image
-
-                src="/images/logo_nyaldox2.png"
-                alt="Picture of the author"
-                width={761 * 0.7}
-                height={807 * 0.7}
-              />
+              <Pull />
             </animated.div>
+
+
 
           </Grid>
 

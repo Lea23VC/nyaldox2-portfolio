@@ -111,4 +111,26 @@ label{
   font-weight: 700;
   font-display: swap;
 }
-
+.ball > div:active {
+  cursor: -webkit-grabbing;
+}
+.ball > div {
+  width: 100px;
+  height: 100px;
+  background: hotpink;
+  border-radius: 50%;
+  cursor: -webkit-grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  white-space: pre;
+}
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  user-select: none;
+}
