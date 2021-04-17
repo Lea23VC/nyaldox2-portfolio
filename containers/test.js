@@ -63,7 +63,6 @@ const useStyles = makeStyles({
   },
   paper: {
 
-    marginTop: "100px",
     padding: "30px",
     
     display: "inline-block",
@@ -72,7 +71,7 @@ const useStyles = makeStyles({
     borderRadius: "20px",
     overflow:'hidden',
     
-    marginBottom: "100px",
+    
     
 
   },

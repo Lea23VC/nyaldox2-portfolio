@@ -5,50 +5,20 @@ import { useSpring, animated } from 'react-spring'
 import { makeStyles } from '@material-ui/core/styles';
 
 import Test from '../containers/test'
-import Pull from '../containers/pull'
+
+
+import First from '../containers/first'
 import Instagram from '../containers/instagram'
 import Grid from '@material-ui/core/Grid';
-
+import Me from '../containers/me'
 import Image from 'next/image'
+
+
 
 
 const useStyles = makeStyles((theme) => ({
 
-  title: {
-
-    fontFamily: 'Supernett-cn',
-    color: "white",
-    '&:first-Letter': { //ASI SE USA SOLO LA PRIMERA LETRA AAAAA
-
-
-      fontSize: "180%"
-    },
-
-
-  },
-
-  subtitle: {
-
-    fontFamily: 'Supernett-cn',
-    color: "white",
-
-  },
-
-  a: {
-    display: "inline-block",
-    '&:first-Letter': { //ASI SE USA SOLO LA PRIMERA LETRA AAAAA
-
-
-      fontSize: "180%"
-    },
-
-  },
-
-  logo: {
-
-
-  }
-
+  
 
 
 
@@ -92,25 +62,36 @@ export default function Home() {
       </Head>
 
 
+      <animated.div style={props}>
+        <First/>
+
+      </animated.div>
+
+      <section id="me">
+      <Me/>
+      </section>
+
+
+
+
 
 
       <div className={classes.test}>
-        <animated.div style={props}><Typography className={classes.title} align="center" variant="h1" >Aldo <div className={classes.a}>Cabrera</div> <div className={classes.a}>A.</div></Typography>
-
-          <Typography className={classes.subtitle} align="center" variant="h2" >Animador Digital / Ilustrador</Typography>
 
 
 
 
 
-        </animated.div>
+
+
+
 
 
 
         <Grid container justify="center">
           <Grid className={classes.logo} item >
             <animated.div style={props}>
-              <Pull />
+
             </animated.div>
 
 

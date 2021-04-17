@@ -12,6 +12,7 @@ const useStyles = makeStyles({
         position: 'relative',
     },
     ball: {
+        
         display: 'flex',
         whiteSpace: 'pre',
         cursor: 'grab',
@@ -46,8 +47,8 @@ export default function Pull() {
                 className={classes.ball}
                 src="/images/logo_nyaldox2.png"
                 alt="Picture of the author"
-                width={761 * 0.7}
-                height={807 * 0.7}
+                width={761 * 0.5}
+                height={807 * 0.5}
               />
             </animated.div>
             
