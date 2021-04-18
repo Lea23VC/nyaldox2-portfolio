@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react";
 import Typography from '@material-ui/core/Typography'
 import { useSpring, animated } from 'react-spring'
 import { makeStyles } from '@material-ui/core/styles';
-
+import axios from 'axios';
 import Test from '../containers/test'
 
-
+import Link from 'next/link'
 import First from '../containers/first'
 import Instagram from '../containers/instagram'
 import Grid from '@material-ui/core/Grid';
@@ -16,7 +16,7 @@ import Image from 'next/image'
 import SpringReset from '../containers/spring-reset'
 
 
-
+import Imgur from '../pages/api/imgur'
 
 const useStyles = makeStyles((theme) => ({
 
@@ -27,13 +27,33 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Home() {
+export default function Home(prop) {
+
+  var clienteID = '0411e68ef4ecf4e'
+  var search = "monkey"
+
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: 'https://api.imgur.com/3/gallery/album/bgKzyUd',
+      headers: { 'authorization': 'Client-ID ' + clienteID,
+ }
+  }).then(function(response) {
+      console.log(response.data);
+  }).catch(function(error) {
+      console.log(error);
+  }).catch(err => { console.log("ss")//vacio así no recibir el error 429
+  });
+
+  }, [])
+
 
   const classes = useStyles();
   const props = useSpring({ opacity: 1, from: { opacity: 0 }, config: { duration: 3000 } })
   const propsDonut = useSpring({ value: 100, from: { value: 0 } })
   const [flipped, set] = useState(false)
 
+  
 
   return (
 
@@ -108,10 +128,12 @@ export default function Home() {
           </Grid>
 
           <Instagram />
+          
 
         </Grid>
 
 
+        
 
 
 
@@ -121,3 +143,4 @@ export default function Home() {
     </>
   )
 }
+

@@ -41,7 +41,7 @@ export default function instagram() {
         <Grid item xs={10} md={10}>
           <Paper variant="outlined" className={classes.instag}>
           <animated.div style={props}><Typography className={classes.title} align="center" variant="h3" >Instagram</Typography></animated.div>
-          <InstagramFeed token={insta}  counter="6"/>
+          <InstagramFeed token={insta}  counter="12"/>
           </Paper>
         </Grid>
       </Grid>

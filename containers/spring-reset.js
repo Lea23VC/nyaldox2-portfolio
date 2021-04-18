@@ -142,7 +142,7 @@ export default function instagram() {
 
 
 
-                    <animated.div className="script-bf-box" style={ {backgroundColor: 'red' }, { transform: radians.to(interp(data.key)) } }>
+                    <animated.div key={data.key} className="script-bf-box" style={ {backgroundColor: 'red' }, { transform: radians.to(interp(data.key)) } }>
 
 
                         <Image

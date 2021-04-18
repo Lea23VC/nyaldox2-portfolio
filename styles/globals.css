@@ -168,6 +168,17 @@ img {
   
 }
 
+@media only screen and (max-width: 600px) {
+
+  .script-bf-box { /*ESTO ES PARA EL REACT SPRING */
+    width: 100px;
+    height: 266px;
+    
+    
+  }
+
+}
+
 .script-bf-box:hover { /* CON ESTO AUMENTA LA OPACIDAD HACIENDO CLICK */
   
   -webkit-transition: opacity 1s ease-in-out;

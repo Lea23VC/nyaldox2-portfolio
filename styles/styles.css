@@ -58,7 +58,6 @@ body {
     line-height: 1.563;
     color: var(--text-color);
     caret-color: var(--text-color);
-    background-image: url('/images/background/derecha-superior.png'), url('/images/background/pelotas.svg'), url('/images/background/izquierda-inferior.png'), url('/images/background/pelotas.svg'), url('/images/background/derecha-inferior.svg');
     background-position: right -50px top, center top -110px, left -750px bottom -190px, center bottom -150px, right -360px bottom -90px;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
     background-size: 760px, 250px, 1250px, 300px, 500px;
@@ -660,7 +659,6 @@ input[type=number] {
 }
 
 #filters {
-    background-image: url('/images/background/pelotas.svg');
     background-position: left top;
     background-repeat: no-repeat;
     background-size: 300px;
@@ -671,7 +669,6 @@ input[type=number] {
 }
 
 #specialities {
-    background-image: url('/images/background/izquierda-superior.svg'), url('/images/background/pelotas.svg');
     background-position: left -200px center, right -260px center;
     background-repeat: no-repeat, no-repeat;
     background-size: 355px, contain;
@@ -689,19 +686,16 @@ section {
 
 @media screen and (max-width: 959px) {
     body {
-        background-image: url('/images/background/derecha-superior.svg'), url('/images/background/pelotas.svg'), url('/images/background/izquierda-inferior.png'), url('/images/background/pelotas.svg'), url('/images/background/derecha-inferior.svg');
         background-position: center top 520px, right 70px top -50px, left -290px bottom 200px, center bottom -165px, right -180px bottom -40px;
         background-repeat: no-repeat, no-repeat;
         background-size: 800px, 300px, 500px, 200px, 230px;
     }
     #filters {
-        background-image: url('/images/background/pelotas.svg');
         background-position: center top -38px;
         background-repeat: no-repeat;
         background-size: 550px;
     }
     #specialities {
-        background-image: url('/images/background/izquierda-superior.svg'), url('/images/background/pelotas.svg');
         background-position: left -300px center, right -190px center;
         background-repeat: no-repeat, no-repeat;
         background-size: 355px, 300px;
