@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-
 async function getImages() {
   var clienteID = '0411e68ef4ecf4e'
   const res = await axios.get("https://api.imgur.com/3/gallery/album/bgKzyUd", {
@@ -49,12 +48,13 @@ async function getImages() {
   }
 
   );
+
   const data = await res.data;
-  console.log(`Show data fetched. Count: ${data.length}`);
-  return {
-    data: data
-  };
+  console.log(data);
 }
+
+getImages();
+
 
 export default function Home(prop) {
 
@@ -76,9 +76,6 @@ export default function Home(prop) {
   const propsDonut = useSpring({ value: 100, from: { value: 0 } })
   const [flipped, set] = useState(false)
 
-  const carlos = getImages()
-
-  console.log(carlos)
 
   return (
 
@@ -120,26 +117,7 @@ export default function Home(prop) {
 
       <Grid className={classes.imgurIm} container justify="center" alignItems="center" spacing={3}>
 
-        {
-          prop.data.data.images.map((data) =>
-
-
-
-            <Grid key={data.id} item xs={3}>
-
-              <figure>
-                <img
-                  id="zoom-default"
-                  src={data.link}
-                  alt="Zoom with default options"
-                  
-                /></figure>
-
-
-            </Grid>
-
-          )
-        }
+        
 
       </Grid>
 
@@ -199,20 +177,5 @@ export default function Home(prop) {
 }
 
 
-Home.getInitialProps = async function () {
 
-  var clienteID = '0411e68ef4ecf4e'
-  const res = await axios.get("https://api.imgur.com/3/gallery/album/bgKzyUd", {
-    headers: {
-      'authorization': 'Client-ID ' + clienteID
-    }
-  }
-
-  );
-  const data = await res.data;
-  console.log(`Show data fetched. Count: ${data.length}`);
-  return {
-    data: data
-  };
-};
 
