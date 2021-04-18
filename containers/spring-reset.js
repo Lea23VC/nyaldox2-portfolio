@@ -104,16 +104,16 @@ export default function instagram() {
     const springImages = [
         {
             "key": "1",
-            "image": "/images/spring/1.jpg",
+            "image": "/images/spring/Lana.jpg",
 
         },
         {
             "key": "2",
-            "image": "/images/spring/2.jpg",
+            "image": "/images/spring/Lillie.jpg",
         },
         {
             "key": "3",
-            "image": "/images/spring/3.jpg",
+            "image": "/images/spring/Mallow.jpg",
         },
     ];
 
