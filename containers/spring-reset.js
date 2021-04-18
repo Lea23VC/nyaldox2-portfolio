@@ -87,7 +87,7 @@ export default function instagram() {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } })
     const classes = useStyles();
     const { radians } = useSpring({
-        to: useCallback(async next => {
+        to: useCallback(async next => { //NO RECUERDO DE DONDE SALIÓ ESTO, PERO SIN ESTO NO FUNCIONA
             while (true) {
                 await next({
                     radians: 2 * Math.PI,
@@ -115,13 +115,28 @@ export default function instagram() {
             "key": "3",
             "image": "/images/spring/Mallow.jpg",
         },
+
+        {
+            "key": "4",
+            "image": "/images/spring/dawn.jpg",
+        },
+
+        {
+            "key": "5",
+            "image": "/images/spring/Iris.jpg",
+        },
+
+        {
+            "key": "6",
+            "image": "/images/spring/May.jpg",
+        },
     ];
 
 
 
     return (
 
-        <Grid container justify="center" alignItems="center">
+        <Grid container justify="center" alignItems="center" >
             {
                 springImages.map((data) =>
 

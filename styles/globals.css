@@ -156,8 +156,8 @@ img {
 	background-color: #555;
 }
 
-.script-bf-box {
-  width: 140px;
+.script-bf-box { /*ESTO ES PARA EL REACT SPRING */
+  width: 150px;
   height: 400px;
   background: white;
   margin: 5px;
@@ -168,7 +168,7 @@ img {
   
 }
 
-.script-bf-box:hover {
+.script-bf-box:hover { /* CON ESTO AUMENTA LA OPACIDAD HACIENDO CLICK */
   
   -webkit-transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
