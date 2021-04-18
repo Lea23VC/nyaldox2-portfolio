@@ -32,20 +32,29 @@ export default function Home(prop) {
   var clienteID = '0411e68ef4ecf4e'
   var search = "monkey"
 
-  useEffect(() => {
-    axios({
+
+
+
+
+  const carlos =  useEffect(() => {
+  axios({
       method: 'get',
       url: 'https://api.imgur.com/3/gallery/album/bgKzyUd',
       headers: { 'authorization': 'Client-ID ' + clienteID,
  }
   }).then(function(response) {
-      console.log(response.data);
+      console.log(response.data)
+      return response.data
   }).catch(function(error) {
-      console.log(error);
+      console.log(error)
+      return  "caca"
   }).catch(err => { console.log("ss")//vacio así no recibir el error 429
   });
 
   }, [])
+
+
+  console.log(carlos)
 
 
   const classes = useStyles();
@@ -92,6 +101,8 @@ export default function Home(prop) {
       <section id="me">
       <Me/>
       </section>
+
+      
 
  
 
