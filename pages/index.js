@@ -20,7 +20,7 @@ import Imgur from '../pages/api/imgur'
 
 const useStyles = makeStyles((theme) => ({
 
-  
+
 
 
 
@@ -29,32 +29,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home(prop) {
 
-  var clienteID = '0411e68ef4ecf4e'
-  var search = "monkey"
-
-
-
-
-
-  const carlos =  useEffect(() => {
-  axios({
-      method: 'get',
-      url: 'https://api.imgur.com/3/gallery/album/bgKzyUd',
-      headers: { 'authorization': 'Client-ID ' + clienteID,
- }
-  }).then(function(response) {
-      console.log(response.data)
-      return response.data
-  }).catch(function(error) {
-      console.log(error)
-      return  "caca"
-  }).catch(err => { console.log("ss")//vacio así no recibir el error 429
-  });
-
-  }, [])
-
-
-  console.log(carlos)
 
 
   const classes = useStyles();
@@ -62,7 +36,7 @@ export default function Home(prop) {
   const propsDonut = useSpring({ value: 100, from: { value: 0 } })
   const [flipped, set] = useState(false)
 
-  
+  console.log(prop.data.data.images)
 
   return (
 
@@ -94,17 +68,36 @@ export default function Home(prop) {
 
 
       <animated.div style={props}>
-        <First/>
+        <First />
 
       </animated.div>
 
       <section id="me">
-      <Me/>
+        <Me />
       </section>
 
-      
+      <Grid container direction="column" justify="center" alignItems="center" >
+        <Grid item xs={12}>
+      {
+            prop.data.data.images.map((data) =>
 
- 
+              
+
+                <Grid key={data.id} item xs={12}>
+                  <Image
+                    className={classes.ball}
+                    src={data.link}
+                    alt="Picture of the author"
+                    width={761 * 0.5}
+                    height={807 * 0.5}
+                  />
+                </Grid>
+              
+            )
+          }
+          </Grid>
+        </Grid>
+
 
 
 
@@ -139,12 +132,17 @@ export default function Home(prop) {
           </Grid>
 
           <Instagram />
+
+
+
           
+
+
 
         </Grid>
 
 
-        
+
 
 
 
@@ -154,4 +152,22 @@ export default function Home(prop) {
     </>
   )
 }
+
+
+Home.getInitialProps = async function () {
+
+  var clienteID = '0411e68ef4ecf4e'
+  const res = await axios.get("https://api.imgur.com/3/gallery/album/bgKzyUd", {
+    headers: {
+      'authorization': 'Client-ID ' + clienteID
+    }
+  }
+
+  );
+  const data = await res.data;
+  console.log(`Show data fetched. Count: ${data.length}`);
+  return {
+    data: data
+  };
+};
 
