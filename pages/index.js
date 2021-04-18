@@ -25,6 +25,8 @@ import ImageZoom from '../pages/api/ImageZoom'
 import mediumZoom from 'medium-zoom'
 
 
+import Imgix from "react-imgix";
+
 import 'react-medium-image-zoom/dist/styles.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -110,6 +112,7 @@ export default function Home(prop) {
                 alt="Picture of the author"
                 width={761 * 0.5}
                 height={807 * 0.5}
+                layout="responsive"
               />
 
             </Grid>
