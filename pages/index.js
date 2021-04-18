@@ -51,12 +51,10 @@ async function getImages() {
 
   const data = await res.data;
   console.log(data);
-
-  return data
 }
 
 
-
+const carlos = getImages();
 
 export default function Home(prop) {
 
@@ -77,8 +75,9 @@ export default function Home(prop) {
   const props = useSpring({ opacity: 1, from: { opacity: 0 }, config: { duration: 3000 } })
   const propsDonut = useSpring({ value: 100, from: { value: 0 } })
   const [flipped, set] = useState(false)
-  const carlos = getImages()
   console.log(carlos)
+
+  
 
   return (
 
@@ -117,30 +116,10 @@ export default function Home(prop) {
       <section id="me">
         <Me />
       </section>
-    
+
       <Grid className={classes.imgurIm} container justify="center" alignItems="center" spacing={3}>
 
-      {
-          
-          carlos.data.data.images.map((data) =>
-
-
-
-            <Grid key={data.id} item xs={3}>
-
-              <figure>
-                <img
-                  id="zoom-default"
-                  src={data.link}
-                  alt="Zoom with default options"
-                  
-                /></figure>
-
-
-            </Grid>
-
-          )
-        }
+        
 
       </Grid>
 
