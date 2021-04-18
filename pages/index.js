@@ -18,10 +18,21 @@ import SpringReset from '../containers/spring-reset'
 
 import Imgur from '../pages/api/imgur'
 
+
+import Zoom from 'react-medium-image-zoom'
+
+import ImageZoom from '../pages/api/ImageZoom'
+import mediumZoom from 'medium-zoom'
+
+
+import 'react-medium-image-zoom/dist/styles.css'
+
 const useStyles = makeStyles((theme) => ({
 
 
-
+  imgurIm: {
+    textAlign: 'center',
+  }
 
 
 }));
@@ -30,7 +41,13 @@ const useStyles = makeStyles((theme) => ({
 export default function Home(prop) {
 
 
+ 
+  if (typeof window !== "undefined") {
+    const zoomDefault = mediumZoom('#zoom-default')
 
+  }
+    
+  
   const classes = useStyles();
   const props = useSpring({ opacity: 1, from: { opacity: 0 }, config: { duration: 3000 } })
   const propsDonut = useSpring({ value: 100, from: { value: 0 } })
@@ -76,27 +93,31 @@ export default function Home(prop) {
         <Me />
       </section>
 
-      <Grid container direction="column" justify="center" alignItems="center" >
-        <Grid item xs={12}>
-      {
-            prop.data.data.images.map((data) =>
+      <Grid className={classes.imgurIm} container justify="center" alignItems="center" spacing={3}>
 
-              
+        {
+          prop.data.data.images.map((data) =>
 
-                <Grid key={data.id} item xs={12}>
-                  <Image
-                    className={classes.ball}
-                    src={data.link}
-                    alt="Picture of the author"
-                    width={761 * 0.5}
-                    height={807 * 0.5}
-                  />
-                </Grid>
-              
-            )
-          }
-          </Grid>
-        </Grid>
+
+
+            <Grid key={data.id} item xs={3}>
+
+             
+              <Image
+                id='zoom-default'
+                className={classes.ball}
+                src={data.link}
+                alt="Picture of the author"
+                width={761 * 0.5}
+                height={807 * 0.5}
+              />
+
+            </Grid>
+
+          )
+        }
+
+      </Grid>
 
 
 
@@ -135,7 +156,7 @@ export default function Home(prop) {
 
 
 
-          
+
 
 
 

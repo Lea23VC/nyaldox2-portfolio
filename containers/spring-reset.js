@@ -146,6 +146,7 @@ export default function instagram() {
 
 
                         <Image
+                        id='zoom-default'
                             className={classes.ball}
                             src={data.image}
                             alt="Picture of the author"
