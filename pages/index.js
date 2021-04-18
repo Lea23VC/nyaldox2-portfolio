@@ -112,8 +112,7 @@ export default function Home(prop) {
                   id="zoom-default"
                   src={data.link}
                   alt="Zoom with default options"
-                  width={761 * 0.5}
-                  height={807 * 0.5}
+                  
                 /></figure>
 
 
