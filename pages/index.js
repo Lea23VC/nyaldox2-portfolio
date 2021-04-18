@@ -43,13 +43,16 @@ const useStyles = makeStyles((theme) => ({
 export default function Home(prop) {
 
 
- 
+
   if (typeof window !== "undefined") {
-    const zoomDefault = mediumZoom('#zoom-default')
+    const zoomScrollOffset = mediumZoom('#zoom-default', {
+      scrollOffset: 0,
+      background: 'rgba(25, 18, 25, .9)',
+    })
 
   }
-    
-  
+
+
   const classes = useStyles();
   const props = useSpring({ opacity: 1, from: { opacity: 0 }, config: { duration: 3000 } })
   const propsDonut = useSpring({ value: 100, from: { value: 0 } })
@@ -104,7 +107,13 @@ export default function Home(prop) {
 
             <Grid key={data.id} item xs={3}>
 
-             
+<figure>
+<img
+            id="zoom-default"
+            src="/images/logo_nyaldox2.png"
+            alt="Zoom with default options"
+          /></figure>
+              
               <Image
                 id='zoom-default'
                 className={classes.ball}
