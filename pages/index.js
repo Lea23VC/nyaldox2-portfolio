@@ -13,15 +13,7 @@ import Grid from '@material-ui/core/Grid';
 import Me from '../containers/me'
 import Image from 'next/image'
 
-import SpringReset from '../containers/spring-reset'
 
-
-import Imgur from '../pages/api/imgur'
-
-
-import Zoom from 'react-medium-image-zoom'
-
-import ImageZoom from '../pages/api/ImageZoom'
 import mediumZoom from 'medium-zoom'
 
 
@@ -39,6 +31,30 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+
+async function getLeagues () {
+  var clienteID = '0411e68ef4ecf4e'
+  return axios.get("https://api.imgur.com/3/gallery/album/bgKzyUd", {
+    headers: {
+      'authorization': 'Client-ID ' + clienteID
+    }
+  })
+  .then(response => {
+    return response.data
+  })
+  .catch(error => {
+    console.log(error);
+    return Promise.reject(error);
+  });
+}
+
+getLeagues().then(response => {
+  console.log(response);
+});
+
+
+
+
 async function getImages() {
   var clienteID = '0411e68ef4ecf4e'
   const res = await axios.get("https://api.imgur.com/3/gallery/album/bgKzyUd", {
@@ -55,7 +71,8 @@ async function getImages() {
 }
 
 
-const carlos = getImages();
+const carlos = getLeagues();
+console.log("carlos" + carlos)
 
 export default function Home(prop) {
 
@@ -153,14 +170,6 @@ export default function Home(prop) {
 
 
 
-
-
-
-
-
-
-
-
         <Grid container justify="center">
           <Grid className={classes.logo} item >
             <animated.div style={props}>
@@ -177,11 +186,6 @@ export default function Home(prop) {
           </Grid>
 
           <Instagram />
-
-
-
-
-
 
 
         </Grid>
