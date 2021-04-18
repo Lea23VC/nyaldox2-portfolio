@@ -51,6 +51,7 @@ async function getImages() {
 
   const data = await res.data;
   console.log(data);
+  return data
 }
 
 
@@ -119,7 +120,26 @@ export default function Home(prop) {
 
       <Grid className={classes.imgurIm} container justify="center" alignItems="center" spacing={3}>
 
-        
+      {
+          prop.data.data.images.map((data) =>
+
+
+
+            <Grid key={data.id} item xs={3}>
+
+              <figure>
+                <img
+                  id="zoom-default"
+                  src={data.link}
+                  alt="Zoom with default options"
+                  
+                /></figure>
+
+
+            </Grid>
+
+          )
+        }
 
       </Grid>
 
@@ -178,6 +198,21 @@ export default function Home(prop) {
   )
 }
 
+Home.getInitialProps = async function () {
 
+  var clienteID = '0411e68ef4ecf4e'
+  const res = await axios.get("https://api.imgur.com/3/gallery/album/bgKzyUd", {
+    headers: {
+      'authorization': 'Client-ID ' + clienteID
+    }
+  }
+
+  );
+  const data = await res.data;
+  console.log(`Show data fetched. Count: ${data.length}`);
+  return {
+    data: data
+  };
+};
 
 
