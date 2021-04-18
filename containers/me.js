@@ -11,7 +11,7 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 import Test from '../containers/test'
-
+import SpringReset from '../containers/spring-reset'
 
 
 
@@ -74,7 +74,7 @@ export default function instagram() {
             <Grid container className={classes.fullGrid} spacing={0} justify="center" alignItems="center">
 
                 <Grid item xs={10} sm={4}>
-                    <Test />
+                    <SpringReset />
 
                 </Grid>
 

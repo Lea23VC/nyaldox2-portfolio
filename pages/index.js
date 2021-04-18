@@ -13,6 +13,8 @@ import Grid from '@material-ui/core/Grid';
 import Me from '../containers/me'
 import Image from 'next/image'
 
+import SpringReset from '../containers/spring-reset'
+
 
 
 
@@ -70,6 +72,8 @@ export default function Home() {
       <section id="me">
       <Me/>
       </section>
+
+ 
 
 
 

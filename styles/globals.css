@@ -1,7 +1,6 @@
 html,
 body {
   padding: 0;
-
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
@@ -157,3 +156,24 @@ img {
 	background-color: #555;
 }
 
+.script-bf-box {
+  width: 140px;
+  height: 400px;
+  background: white;
+  margin: 5px;
+  will-change: transform;
+  opacity: 0.5;
+  object-fit: cover;
+  
+  
+}
+
+.script-bf-box:hover {
+  
+  -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    opacity: 1;
+  
+}
