@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React, { useEffect, useState } from "react";
+import React, {  Component, useEffect, useState } from "react";
 import Typography from '@material-ui/core/Typography'
 import { useSpring, animated } from 'react-spring'
 import { makeStyles } from '@material-ui/core/styles';
@@ -11,13 +11,13 @@ import First from '../containers/first'
 import Instagram from '../containers/instagram'
 import Grid from '@material-ui/core/Grid';
 import Me from '../containers/me'
-import Image from 'next/image'
 
 
 import mediumZoom from 'medium-zoom'
 
 
-import Imgix from "react-imgix";
+const isServer = typeof window === 'undefined'
+const WOW = !isServer ? require('wow.js') : null
 
 import 'react-medium-image-zoom/dist/styles.css'
 
@@ -31,56 +31,44 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-var caca = 'caca'
-async function getLeagues () {
-  var clienteID = '0411e68ef4ecf4e'
-  return axios.get("https://api.imgur.com/3/gallery/album/bgKzyUd", {
-    headers: {
-      'authorization': 'Client-ID ' + clienteID
-    }
-  })
-  .then(response => {
-    return response.data
-  })
-  .catch(error => {
-    console.log(error);
-    return Promise.reject(error);
-  });
-}
-
-getLeagues().then(response => {
-  console.log(response);
-});
 
 
 
 
-async function getImages() {
-  var clienteID = '0411e68ef4ecf4e'
-  const res = await axios.get("https://api.imgur.com/3/gallery/album/bgKzyUd", {
-    headers: {
-      'authorization': 'Client-ID ' + clienteID
-    }
-  }
-
-  );
-
-  const data = await res.data;
-  console.log(data);
-  return data
-}
 
 
-const carlos = getLeagues();
-console.log("carlos" + carlos)
+//async function getImages() {
+  //var clienteID = '0411e68ef4ecf4e'
+  //const res = await axios.get("https://api.imgur.com/3/gallery/album/bgKzyUd", {
+    //headers: {
+     // 'authorization': 'Client-ID ' + clienteID
+    //}
+  //}
 
-export default function Home(prop) {
+  //);
 
+  //const data = await res.data;
+  //console.log(data);
+  //return data
+//}
+
+
+
+
+
+
+
+export default function Home(imgs) {
+  
+  useEffect(() => {
     
+  }, []);
 
 
-
-  if (typeof window !== "undefined") {
+  if (typeof window !== "undefined") { //client-side rendering para api que no soporten server-side
+    window.WOW = require('wow.js');
+    new WOW().init(); 
+    console.log(window.WOW)
     const zoomScrollOffset = mediumZoom('#zoom-default', {
       scrollOffset: 0,
       background: 'rgba(25, 18, 25, .9)',
@@ -89,21 +77,26 @@ export default function Home(prop) {
   }
 
 
+
   const classes = useStyles();
   const props = useSpring({ opacity: 1, from: { opacity: 0 }, config: { duration: 3000 } })
   const propsDonut = useSpring({ value: 100, from: { value: 0 } })
   const [flipped, set] = useState(false)
-  carlos.then((a) => {
-    console.log("carlos 3 " + a);
-  });
 
-  
+
+
+
+
 
   return (
 
     <>
 
       <Head>
+
+
+      <title>Daguito</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"/>
 
         <link rel="shortcut icon" href="/images/favicon.png" />
         <link
@@ -128,7 +121,7 @@ export default function Home(prop) {
       </Head>
 
 
-      <animated.div style={props}>
+      <animated.div  style={props}>
         <First />
 
       </animated.div>
@@ -139,23 +132,28 @@ export default function Home(prop) {
 
       <Grid className={classes.imgurIm} container justify="center" alignItems="center" spacing={3}>
 
-      {
-          prop.data.data.images.map((data) =>
+        {
+
+
+          imgs.data.data.images.map((data) =>
 
 
 
             <Grid key={data.id} item xs={3}>
 
-              <figure>
-                <img
-                  id="zoom-default"
-                  src={data.link}
-                  alt="Zoom with default options"
-                  
-                /></figure>
+          <figure className={"wow bounceInUp"}>
+            <img
+
+              
+              
+              id="zoom-default"
+              src={data.link}
+              alt="Zoom with default options"
+
+            /></figure>
 
 
-            </Grid>
+        </Grid>
 
           )
         }
@@ -187,12 +185,10 @@ export default function Home(prop) {
             <Test />
           </Grid>
 
-          <Instagram />
+          <Instagram dato="awoooo"/>
 
 
         </Grid>
-
-
 
 
 
@@ -217,7 +213,7 @@ Home.getInitialProps = async function () {
   const data = await res.data;
   console.log(`Show data fetched. Count: ${data.length}`);
   return {
-    data: data
+    data
   };
 };
 

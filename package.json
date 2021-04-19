@@ -24,11 +24,13 @@
     "react-render-image": "^3.0.1",
     "react-spring": "^9.1.0",
     "react-with-gesture": "^4.0.8",
-    "react-youtube-playlist": "^2.2.8"
+    "react-youtube-playlist": "^2.2.8",
+    "wow.js": "^1.2.2"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.4",
     "babel-plugin-styled-components": "^1.12.0",
+    "exports-loader": "^2.0.0",
     "image-webpack-loader": "^7.0.1"
   }
 }

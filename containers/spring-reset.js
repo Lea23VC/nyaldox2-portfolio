@@ -13,6 +13,7 @@ import range from 'lodash/range'
 
 
 
+
 const interp = i => r => `translate3d(0, ${15 * Math.sin(r + (i * 2 * Math.PI) / 1.6)}px, 0)`
 
 
@@ -83,7 +84,11 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+
+
+
 export default function instagram() {
+    
     const props = useSpring({ opacity: 1, from: { opacity: 0 } })
     const classes = useStyles();
     const { radians } = useSpring({
@@ -146,7 +151,6 @@ export default function instagram() {
 
 
                         <Image
-                        
                             className={classes.ball}
                             src={data.image}
                             alt="Picture of the author"

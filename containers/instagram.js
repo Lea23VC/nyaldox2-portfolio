@@ -30,7 +30,9 @@ const useStyles = makeStyles({
 
 });
 
-export default function instagram() {
+export default function instagram(caca) {
+
+  console.log(caca.dato)
   const props = useSpring({opacity: 1, from: {opacity: 0}})
   const classes = useStyles();
   return(
