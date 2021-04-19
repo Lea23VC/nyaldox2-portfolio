@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-
+var caca = 'caca'
 async function getLeagues () {
   var clienteID = '0411e68ef4ecf4e'
   return axios.get("https://api.imgur.com/3/gallery/album/bgKzyUd", {
@@ -93,7 +93,9 @@ export default function Home(prop) {
   const props = useSpring({ opacity: 1, from: { opacity: 0 }, config: { duration: 3000 } })
   const propsDonut = useSpring({ value: 100, from: { value: 0 } })
   const [flipped, set] = useState(false)
-  console.log(carlos)
+  carlos.then((a) => {
+    console.log("carlos 3 " + a);
+  });
 
   
 
