@@ -21,6 +21,9 @@ const WOW = !isServer ? require('wow.js') : null
 
 import 'react-medium-image-zoom/dist/styles.css'
 
+
+
+
 const useStyles = makeStyles((theme) => ({
 
 
@@ -95,7 +98,7 @@ export default function Home(imgs) {
       <Head>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
 
-        <title>Portafolio de Aldo Cabrera Arratia</title>
+        
         <meta name="title" content="Portafolio de Aldo Cabrera Arratia" />
         <meta name="description" content="Hola soy Aldo Cabrera" />
 
