@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React, {  Component, useEffect, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import Typography from '@material-ui/core/Typography'
 import { useSpring, animated } from 'react-spring'
 import { makeStyles } from '@material-ui/core/styles';
@@ -38,18 +38,18 @@ const useStyles = makeStyles((theme) => ({
 
 
 //async function getImages() {
-  //var clienteID = '0411e68ef4ecf4e'
-  //const res = await axios.get("https://api.imgur.com/3/gallery/album/bgKzyUd", {
-    //headers: {
-     // 'authorization': 'Client-ID ' + clienteID
-    //}
-  //}
+//var clienteID = '0411e68ef4ecf4e'
+//const res = await axios.get("https://api.imgur.com/3/gallery/album/bgKzyUd", {
+//headers: {
+// 'authorization': 'Client-ID ' + clienteID
+//}
+//}
 
-  //);
+//);
 
-  //const data = await res.data;
-  //console.log(data);
-  //return data
+//const data = await res.data;
+//console.log(data);
+//return data
 //}
 
 
@@ -59,15 +59,15 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Home(imgs) {
-  
+
   useEffect(() => {
-    
+
   }, []);
 
 
   if (typeof window !== "undefined") { //client-side rendering para api que no soporten server-side
     window.WOW = require('wow.js');
-    new WOW().init(); 
+    new WOW().init();
     console.log(window.WOW)
     const zoomScrollOffset = mediumZoom('#zoom-default', {
       scrollOffset: 0,
@@ -93,10 +93,35 @@ export default function Home(imgs) {
     <>
 
       <Head>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
+
+        <title>Portafolio de Aldo Cabrera Arratia</title>
+        <meta name="title" content="Portafolio de Aldo Cabrera Arratia" />
+        <meta name="description" content="Hola soy Aldo Cabrera" />
 
 
-      <title>Daguito</title>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://daguito.online/" />
+        <meta property="og:title" content="Portafolio de Aldo Cabrera Arratia" />
+        <meta property="og:description" content="Hola soy Aldo Cabrera" />
+        <meta property="og:image" content="" />
+
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://daguito.online/" />
+        <meta property="twitter:title" content="Portafolio de Aldo Cabrera Arratia" />
+        <meta property="twitter:description" content="Hola soy Aldo Cabrera" />
+        <meta property="twitter:image" content="" />
+
+
+        <title>Daguito</title>
+
+
+
+
+
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" />
 
         <link rel="shortcut icon" href="/images/favicon.png" />
         <link
@@ -118,10 +143,15 @@ export default function Home(imgs) {
           as="font"
           crossOrigin=""
         />
+
+
+
+
+
       </Head>
 
 
-      <animated.div  style={props}>
+      <animated.div style={props}>
         <First />
 
       </animated.div>
@@ -141,19 +171,19 @@ export default function Home(imgs) {
 
             <Grid key={data.id} item xs={3}>
 
-          <figure className={"wow bounceInUp"}>
-            <img
-
-              
-              
-              id="zoom-default"
-              src={data.link}
-              alt="Zoom with default options"
-
-            /></figure>
+              <figure className={"wow bounceInUp"}>
+                <img
 
 
-        </Grid>
+
+                  id="zoom-default"
+                  src={data.link}
+                  alt="Zoom with default options"
+
+                /></figure>
+
+
+            </Grid>
 
           )
         }
@@ -185,7 +215,7 @@ export default function Home(imgs) {
             <Test />
           </Grid>
 
-          <Instagram dato="awoooo"/>
+          <Instagram dato="awoooo" />
 
 
         </Grid>
