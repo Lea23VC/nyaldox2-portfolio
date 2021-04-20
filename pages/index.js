@@ -89,13 +89,14 @@ export default function Home(imgs) {
 
 
 
-
-
   return (
 
     <>
 
       <Head>
+
+
+
       <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
 
         
