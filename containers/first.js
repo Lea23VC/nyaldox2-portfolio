@@ -1,15 +1,15 @@
 import { useSpring, animated } from 'react-spring'
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import Image from 'next/image'
+
 import Typography from '@material-ui/core/Typography'
 
-import Paper from '@material-ui/core/Paper'
+
 import Grid from '@material-ui/core/Grid'
 import Pull from '../containers/pull'
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
-import Link from '@material-ui/core/Link';
+
 
 
 

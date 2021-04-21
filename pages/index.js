@@ -1,12 +1,10 @@
 import Head from 'next/head'
-import React, { Component, useEffect, useState } from "react";
-import Typography from '@material-ui/core/Typography'
+import React, {useEffect, useState } from "react";
 import { useSpring, animated } from 'react-spring'
 import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 import Test from '../containers/test'
 
-import Link from 'next/link'
 import First from '../containers/first'
 import Instagram from '../containers/instagram'
 import Grid from '@material-ui/core/Grid';
