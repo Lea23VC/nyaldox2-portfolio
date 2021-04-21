@@ -22,7 +22,7 @@ const WOW = !isServer ? require('wow.js') : null
 import 'react-medium-image-zoom/dist/styles.css'
 
 
-
+import HeadBar from '../containers/appbar'
 
 const useStyles = makeStyles((theme) => ({
 
@@ -153,6 +153,8 @@ export default function Home(imgs) {
 
 
       </Head>
+
+      <HeadBar/>
 
 
       <animated.div style={props}>

@@ -93,7 +93,7 @@ export default function instagram() {
 
                 <Grid item xs={12}>
 
-                    <Typography className={classes.title} variant="h1" >Aldo <div className={classes.a}>Cabrera</div> <div className={classes.a}>A.</div></Typography>
+                    <Typography className={classes.title} variant="h1" >Dagoberto <div className={classes.a}>Ruminot</div> <div className={classes.a}>L.</div></Typography>
 
                     <Typography className={classes.subtitle} variant="h2" >Animador Digital / Ilustrador</Typography>
 
@@ -102,7 +102,7 @@ export default function instagram() {
 
                 <Grid item xs={12}>
                     <ButtonGroup color="secondary" size="small" aria-label="small outlined button group">
-                        <Button href="#me" className={classes.boton} >INFO</Button>
+                        <Button href="#me" className={classes.boton} >Info</Button>
                         <Button className={classes.boton} >CV</Button>
                         <Button className={classes.boton} >Ilustraciones</Button>
                         <Button className={classes.boton} >Animaciones</Button>
