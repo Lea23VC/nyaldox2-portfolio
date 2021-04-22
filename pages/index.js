@@ -66,10 +66,11 @@ export default function Home(imgs) {
       }
     },
 
+
     typography: {
 
       fontFamily: 'Supernett-cn',
-    }
+    },
   });
 
   const lightTheme = createMuiTheme({
@@ -152,7 +153,7 @@ export default function Home(imgs) {
 Home.getInitialProps = async function () {
 
   var clienteID = '0411e68ef4ecf4e'
-  const res = await axios.get("https://api.imgur.com/3/album/24W2WJI", {
+  const res = await axios.get("https://api.imgur.com/3/album/dnOEw0A", {
     headers: {
       'authorization': 'Client-ID ' + clienteID
     }

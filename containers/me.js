@@ -46,6 +46,10 @@ const useStyles = makeStyles((theme) => ({
 
     fullGrid: {
         
+        padding: theme.spacing(13),
+        [theme.breakpoints.down("sm")]: {
+            padding: theme.spacing(3),
+          },
         // height: '100vh',
         spacing: 0,
         
@@ -73,12 +77,12 @@ export default function instagram() {
         <>
             <Grid container className={classes.fullGrid} spacing={0} justify="center" alignItems="center">
 
-                <Grid className={"wow bounceInUp"} item xs={12} sm={12} md={4}>
+                <Grid className={"wow bounceInUp"} item xs={12} sm={4} md={6} lg={4}>
                     <SpringReset />
 
                 </Grid>
 
-                <Grid item xs={12} sm={12} md={8}>
+                <Grid item xs={12} sm={8} md={6} lg={8}>
                     
                     <Typography className={classes.title} variant='h1'> Sobre mí</Typography>
                     <Typography className={classes.cuerpo} align='left' variant="subtitle1">Hola, soy Dagoberto Ruminot Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu elit ut orci eleifend rutrum at vel tellus. Nullam sed euismod diam, sed iaculis neque. Morbi sollicitudin odio auctor, dictum nisi ac, interdum odio. Mauris pretium fermentum nisi, nec vehicula urna dapibus id. Ut condimentum consectetur lacus, nec iaculis augue commodo vitae. Donec sit amet sapien orci. Praesent nec ante vel nisi ullamcorper vulputate. Sed ut quam pulvinar lacus aliquet tincidunt.</Typography>

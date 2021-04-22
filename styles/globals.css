@@ -185,3 +185,7 @@ h1, h2, h3, h4, h5, h6 {
 -ms-user-select: none; /* IE10+/Edge */
 user-select: none; /* Standard */
 }
+
+.pswp__caption {
+  font-size: 30px;
+}

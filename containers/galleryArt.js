@@ -12,6 +12,11 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         margin: '0',
         padding: theme.spacing(13),
+        [theme.breakpoints.down("sm")]: {
+            padding: theme.spacing(3),
+          },
+
+
         
     },
 
@@ -51,7 +56,7 @@ export default function ImgurGallery(id) {
 
                 <Grid item xs={12} sm={12} md={12}>
 
-                    <Typography className={classes.title} variant='h2'>Mi arte</Typography>
+                    <Typography className={classes.title} variant='h2'>Trabajos personales</Typography>
 
 
                 </Grid>
@@ -60,18 +65,22 @@ export default function ImgurGallery(id) {
                         id.data.map((data) =>
                             <Grid key={data.id} item xs={6} sm={4} md={3} lg={2} className={classes.imagesCon}>
 
-
+                                
 
                                 <div className={"wow fadeInUp"}>
+                                    
                                     <Item
 
                                         original={data.link}
                                         thumbnail={data.link}
                                         width="1500"
                                         height="1500"
+                                        title={data.description}
+                                        caption={data.description}
+                                        
                                     >
                                         {({ ref, open }) => (
-                                            <img ref={ref} onClick={open} src={data.link} />
+                                            <img  ref={ref} onClick={open} src={data.link} />
                                         )}
                                     </Item>
                                 </div>

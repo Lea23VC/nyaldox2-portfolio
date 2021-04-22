@@ -13,22 +13,31 @@ import 'react-ig-feed/dist/index.css'
 const insta = "IGQVJVQ0NiSmlWdEF4RjA4N3B0bW85ODZAseTBleWdCRVl1ekFqblFhTUNnYlFidElCLTJWdmV6NHpaU1J1blhYWHZANcmpXTkxQYUNvT1Y0MHZAiV081SXkxd3BuR3MwZAXhGR0pGNEJrTjZAsdURGZADFZARwZDZD"
 
 
-const useStyles = makeStyles({ 
+const useStyles = makeStyles((theme) => ({
 
   instag: {
     
-    borderRadius: "20px",
+    border: '0px',
     backgroundColor: "black",
     alignItems: "center"
     
     
   },
   title: {
-    color: "white"
-  }
+    color: "white",
+    paddingBottom: theme.spacing(5)
+  },
+  containerIm: {
+    width: '100%',
+    margin: '0',
+    padding: theme.spacing(13),
+    [theme.breakpoints.down("sm")]: {
+        padding: theme.spacing(3),
+      },
+     }
 
 
-});
+    }));
 
 export default function instagram(caca) {
 
@@ -39,8 +48,8 @@ export default function instagram(caca) {
 
     <>
 
-      <Grid container direction="column" justify="center" alignItems="center"> 
-        <Grid item xs={10} md={10}>
+      <Grid container className={classes.containerIm} direction="column" justify="center" alignItems="center"> 
+        <Grid item xs={12} md={12}>
           <Paper variant="outlined" className={classes.instag}>
           <animated.div style={props}><Typography className={classes.title} align="center" variant="h3" >Instagram</Typography></animated.div>
           <InstagramFeed token={insta}  counter="12"/>
