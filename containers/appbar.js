@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) =>
     },
     menuButton: {
       marginRight: theme.spacing(2),
+      marginLeft: '20px'
     },
     title: {
       flexGrow: 5,
@@ -52,7 +53,8 @@ const useStyles = makeStyles((theme) =>
 
       '&:hover': {
 
-        opacity: 0.7
+        opacity: 0.7,
+        fontSize: '120%'
 
 
       },
@@ -79,6 +81,10 @@ const useStyles = makeStyles((theme) =>
 function scrollToForm() {
   document.querySelector('#me').scrollIntoView({behavior: 'smooth'});
 }
+function scrollToTop() {
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
 
 
@@ -98,7 +104,7 @@ export default function HeadBar() {
         <HideOnScroll>
           <AppBar className={classes.appbar} position="fixed">
             <Toolbar>
-              <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <IconButton onClick={scrollToTop} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                 <Image
                   className={classes.ball}
                   src="/images/logo_nyaldox2.png"

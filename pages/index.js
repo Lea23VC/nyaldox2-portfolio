@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React, {useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSpring, animated } from 'react-spring'
 import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
@@ -22,12 +22,15 @@ import 'react-medium-image-zoom/dist/styles.css'
 
 import HeadBar from '../containers/appbar'
 
+
+import GalleryArt from '../containers/galleryArt'
+
+import Typography from '@material-ui/core/Typography'
+
+
 const useStyles = makeStyles((theme) => ({
 
 
-  imgurIm: {
-    textAlign: 'center',
-  }
 
 
 }));
@@ -95,9 +98,9 @@ export default function Home(imgs) {
 
 
 
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
 
-        
+
         <meta name="title" content="Portafolio de Aldo Cabrera Arratia" />
         <meta name="description" content="Hola soy Aldo Cabrera" />
 
@@ -152,8 +155,8 @@ export default function Home(imgs) {
 
       </Head>
 
-      <HeadBar/>
-
+      <HeadBar />
+      
 
       <animated.div style={props}>
         <First />
@@ -164,35 +167,8 @@ export default function Home(imgs) {
         <Me />
       </section>
 
-      <Grid className={classes.imgurIm} container justify="center" alignItems="center" spacing={3}>
 
-        {
-
-
-          imgs.data.data.images.map((data) =>
-
-
-
-            <Grid key={data.id} item xs={3}>
-
-              <figure className={"wow bounceInUp"}>
-                <img
-
-
-
-                  id="zoom-default"
-                  src={data.link}
-                  alt="Zoom with default options"
-
-                /></figure>
-
-
-            </Grid>
-
-          )
-        }
-
-      </Grid>
+      <GalleryArt data={imgs.data.data.images} />
 
 
 
@@ -237,7 +213,7 @@ export default function Home(imgs) {
 Home.getInitialProps = async function () {
 
   var clienteID = '0411e68ef4ecf4e'
-  const res = await axios.get("https://api.imgur.com/3/gallery/album/bgKzyUd", {
+  const res = await axios.get("https://api.imgur.com/3/album/24W2WJI", {
     headers: {
       'authorization': 'Client-ID ' + clienteID
     }

@@ -68,10 +68,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     fullGrid: {
-        width: '100vw',
+        
         height: '100vh',
         spacing: 0,
-        justify: 'space-around',
+        justify: 'center',
         textAlign: 'center'
     },
     buttonGrid: {
