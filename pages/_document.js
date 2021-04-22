@@ -6,8 +6,17 @@ import { ServerStyleSheets } from '@material-ui/core/styles';
 
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
-let theme = createMuiTheme();
-theme = responsiveFontSizes(theme);
+const theme = createMuiTheme({
+  palette: {
+    background: {
+      default: "#222222"
+    },
+    text: {
+      primary: "#ffffff"
+    }
+  }
+  
+});
 
 
 export default class MyDocument extends Document {

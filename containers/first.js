@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         '&:first-Letter': { //ASI SE USA SOLO LA PRIMERA LETRA AAAAA
 
 
-            fontSize: "180%"
+            fontSize: "2em"
         },
 
         [theme.breakpoints.down("xs")]: {
@@ -68,11 +68,11 @@ const useStyles = makeStyles((theme) => ({
     },
 
     fullGrid: {
-        
         height: '100vh',
         spacing: 0,
         justify: 'center',
-        textAlign: 'center'
+        textAlign: 'center',
+        padding: theme.spacing(0.5),
     },
     buttonGrid: {
 

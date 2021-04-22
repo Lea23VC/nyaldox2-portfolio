@@ -1,6 +1,6 @@
 
-import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import React, { useState, useContext } from 'react';
+import { createStyles, makeStyles, createMuiTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -10,6 +10,15 @@ import MenuIcon from '@material-ui/icons/Menu';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
 import Image from 'next/image'
+import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
+
+
+import { useTheme } from '@material-ui/core/styles';
+
+import Switch from '@material-ui/core/Switch';
+
+
+
 
 
 function HideOnScroll(props) {
@@ -67,7 +76,7 @@ const useStyles = makeStyles((theme) =>
     digitalClock: {
       color: "white",
       fontFamily: 'Supernett-cn',
-      
+
     }
 
 
@@ -79,7 +88,7 @@ const useStyles = makeStyles((theme) =>
 );
 
 function scrollToForm() {
-  document.querySelector('#me').scrollIntoView({behavior: 'smooth'});
+  document.querySelector('#me').scrollIntoView({ behavior: 'smooth' });
 }
 function scrollToTop() {
 
@@ -88,8 +97,20 @@ function scrollToTop() {
 
 
 
+
+
+
+
 export default function HeadBar() {
 
+  
+
+
+
+  const changeTheme = () => {  // function to set state
+    if (themeSelected === "primary") setThemeSelected("secondary");
+    else setThemeSelected("primary");
+  };
 
 
   const classes = useStyles();
@@ -113,11 +134,24 @@ export default function HeadBar() {
                   height={50}
                 />
               </IconButton>
-              
+
               <Typography variant="h6" className={classes.title}>
                 Nyaldox2
             </Typography>
-          
+
+              <IconButton   //icon button with onClick handler
+                className={classes.menuButton}
+                color="inherit"
+                aria-label="open drawer"
+                onClick={() => {
+                  changeTheme();
+                }}
+              >
+                <SwapHorizIcon />
+              </IconButton>
+
+
+
               <Button onClick={scrollToForm} className={classes.boton} >Info</Button>
               <Button className={classes.boton} >CV</Button>
               <Button className={classes.boton} >Ilustraciones</Button>

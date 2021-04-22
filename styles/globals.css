@@ -1,7 +1,7 @@
 html,
 body {
-  margin-right: clamp(0px, 10vw, 130px);
-  margin-left: clamp(0px, 10vw, 130px);
+  /* margin-right: clamp(0px, 10vw, 130px);
+  margin-left: clamp(0px, 10vw, 130px); */
   
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -157,9 +157,10 @@ img {
   
 }
 
+/*ESTO ES PARA EL REACT SPRING */
 @media only screen and (max-width: 600px) {
 
-  .script-bf-box { /*ESTO ES PARA EL REACT SPRING */
+  .script-bf-box { 
     width: 100px;
     height: 266px;
     

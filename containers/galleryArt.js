@@ -1,9 +1,19 @@
 import React from "react";
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography'
+import Typography from '@material-ui/core/Typography';
+
+import 'photoswipe/dist/photoswipe.css'
+import 'photoswipe/dist/default-skin/default-skin.css'
+import { Gallery, Item } from 'react-photoswipe-gallery'
 
 const useStyles = makeStyles((theme) => ({
+    containerIm: {
+        width: '100%',
+        margin: '0',
+        padding: theme.spacing(13),
+        
+    },
 
     title: {
         fontFamily: 'Supernett-cn',
@@ -19,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
 
- 
+
 
 
 
@@ -37,29 +47,57 @@ export default function ImgurGallery(id) {
 
         <>
 
-            <Grid container className={classes.containerIm}  justify="center" alignItems="center" spacing={2}>
+            <Grid container className={classes.containerIm} justify="center" alignItems="center" spacing={2} >
 
-                <Grid item xs={12} sm={12}>
+                <Grid item xs={12} sm={12} md={12}>
 
-                <Typography className={classes.title} variant='h2'>Mi arte</Typography>
+                    <Typography className={classes.title} variant='h2'>Mi arte</Typography>
 
 
                 </Grid>
+                <Gallery>
+                    {
+                        id.data.map((data) =>
+                            <Grid key={data.id} item xs={6} sm={4} md={3} lg={2} className={classes.imagesCon}>
 
-                {
-                    id.data.map((data) =>
-                        <Grid key={data.id} item xs={6} sm={4} md={3} lg={2} className={classes.imagesCon}>
 
-                            <figure className={"wow fadeInUp"}>
+
+                                <div className={"wow fadeInUp"}>
+                                    <Item
+
+                                        original={data.link}
+                                        thumbnail={data.link}
+                                        width="1500"
+                                        height="1500"
+                                    >
+                                        {({ ref, open }) => (
+                                            <img ref={ref} onClick={open} src={data.link} />
+                                        )}
+                                    </Item>
+                                </div>
+
+
+
+
+
+                                {/* <figure >
                                 <img className={classes.images}
                                     id="zoom-default"
                                     src={data.link}
                                     alt="Zoom with default options"
-                                /></figure>
+                                /></figure> */}
 
-                        </Grid>
-                    )
-                }
+
+
+                            </Grid>
+
+
+                        )
+                    }
+                </Gallery>
+
+
+
 
             </Grid>
         </>
