@@ -50,9 +50,9 @@ const useStyles = makeStyles((theme) => ({
 
     boton: {
         fontFamily: 'Supernett-cn',
-        color: "white",
+        color: 'inherit',
         fontSize: "30px",
-        backgroundColor: "black",
+        color: 'primary',
 
         [theme.breakpoints.down("xs")]: {
             fontSize: "16px"
@@ -93,7 +93,7 @@ export default function instagram() {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <ButtonGroup color="secondary" size="small" aria-label="small outlined button group">
+                    <ButtonGroup color="primary" size="small" aria-label="small outlined button group">
                         <Button href="#me" className={classes.boton} >Info</Button>
                         <Button className={classes.boton} >CV</Button>
                         <Button className={classes.boton} >Ilustraciones</Button>
