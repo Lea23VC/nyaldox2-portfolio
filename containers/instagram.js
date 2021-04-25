@@ -16,15 +16,17 @@ const insta = "IGQVJVQ0NiSmlWdEF4RjA4N3B0bW85ODZAseTBleWdCRVl1ekFqblFhTUNnYlFidE
 const useStyles = makeStyles((theme) => ({
 
   instag: {
+
+    backgroundColor: 'inherit',
     
     border: '0px',
-    backgroundColor: "black",
+    
     alignItems: "center"
     
     
   },
   title: {
-    color: "white",
+    
     paddingBottom: theme.spacing(5)
   },
   containerIm: {

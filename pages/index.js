@@ -114,14 +114,17 @@ const lightTheme = createMuiTheme({
       type: "dark",
       background: {
       default: '#000000'
+     },
+     primary: {
+       main: '#FFFFFF'
      }
     },
   
   
-    typography: {
+  typography: {
   
-      fontFamily: 'Supernett-cn',
-    },
+  fontFamily: 'Supernett-cn',
+  },
   });
 
   const muiTheme = createMuiTheme(theme);
@@ -141,7 +144,7 @@ const lightTheme = createMuiTheme({
   if (typeof window !== "undefined") { //client-side rendering para api que no soporten server-side
     window.WOW = require('wow.js');
     new WOW().init();
-    console.log(window.WOW)
+    //console.log(window.WOW)
     const zoomScrollOffset = mediumZoom('#zoom-default', {
       scrollOffset: 0,
       background: 'rgba(25, 18, 25, .9)',
