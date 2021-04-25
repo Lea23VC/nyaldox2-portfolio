@@ -10,14 +10,6 @@ import Pull from '../containers/pull'
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 
-
-
-
-
-
-
-
-
 const useStyles = makeStyles((theme) => ({
     title: {
 
@@ -40,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     subtitle: {
 
         fontFamily: 'Supernett-cn',
-        color: "white",
+        
         [theme.breakpoints.down("xs")]: {
             fontSize: "3vh"
         }
@@ -95,7 +87,7 @@ export default function instagram() {
 
                     <Typography className={classes.title} variant="h1" >Dagoberto <div className={classes.a}>Ruminot</div> <div className={classes.a}>L.</div></Typography>
 
-                    <Typography className={classes.subtitle} variant="h2" >Animador Digital / Ilustrador</Typography>
+                    <Typography className={classes.subtitle} variant="h2" >Animador Digital / Ilustrador / Electricista</Typography>
 
                     <Pull />
                 </Grid>

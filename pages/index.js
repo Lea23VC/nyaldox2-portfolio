@@ -48,44 +48,87 @@ import GalleryArt from '../containers/galleryArt'
 
 
 
-
-
-
-
 export default function Home(imgs) {
 
 
-  const [darkMode, setDarkMode] = useState(false);
+  // const [theme, setDarkMode] = useState(false);
 
 
-  const darkTheme = createMuiTheme({
+
+
+
+ const darkTheme = createMuiTheme({
+  palette: {
+    type: "dark",
+    background: {
+    default: '#000000'
+   },
+   primary: {
+     main: '#FFFFFF'
+   }
+  },
+
+
+typography: {
+
+fontFamily: 'Supernett-cn',
+},
+});
+
+const lightTheme = createMuiTheme({
+
+  palette: {
+    type: "light",
+    background: {
+      default: '#FFFFFF'
+    },
+    primary: {
+      main: '#000000'
+    }
+  },
+  typography: {
+
+  fontFamily: 'Supernett-cn',
+  },
+
+
+
+
+
+})
+
+  const toggleDarkTheme = () => {
+   
+      if (theme.palette.type == "light") {
+        setTheme(darkTheme)
+      }
+      else {
+        setTheme(lightTheme)
+      }
+    
+  };
+  
+
+  const [theme, setTheme] = useState({
     palette: {
       type: "dark",
       background: {
-        default: '#000000'
-      }
+      default: '#000000'
+     }
     },
-
-
+  
+  
     typography: {
-
+  
       fontFamily: 'Supernett-cn',
     },
   });
 
-  const lightTheme = createMuiTheme({
-
-    palette: {
-      type: "light",
-    }
+  const muiTheme = createMuiTheme(theme);
 
 
 
-
-
-  })
-
-
+  //const appliedTheme = createMuiTheme(theme ? lightTheme : darkTheme)
 
 
 
@@ -120,10 +163,10 @@ export default function Home(imgs) {
     <>
 
       <HeadTags />
-      <MuiThemeProvider theme={darkTheme ? darkTheme : lightTheme}>
+      <MuiThemeProvider theme={muiTheme}>
         <CssBaseline />
 
-        <HeadBar />
+        <HeadBar onToggleDark={toggleDarkTheme} />
 
         <animated.div style={props}>
           <First />

@@ -13,8 +13,6 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Test from '../containers/test'
 import SpringReset from '../containers/spring-reset'
 
-
-
 const useStyles = makeStyles((theme) => ({
     title: {
 
@@ -37,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     subtitle: {
 
         fontFamily: 'Supernett-cn',
-        color: "white",
+        
         [theme.breakpoints.down("xs")]: {
             fontSize: "3vh"
         }
@@ -63,10 +61,6 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'Supernett-cn',
         fontSize: '120%'
     }
-
-
-
-
 }));
 
 export default function instagram() {
@@ -85,7 +79,7 @@ export default function instagram() {
                 <Grid item xs={12} sm={8} md={6} lg={8}>
                     
                     <Typography className={classes.title} variant='h1'> Sobre mí</Typography>
-                    <Typography className={classes.cuerpo} align='left' variant="subtitle1">Hola, soy Dagoberto Ruminot Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu elit ut orci eleifend rutrum at vel tellus. Nullam sed euismod diam, sed iaculis neque. Morbi sollicitudin odio auctor, dictum nisi ac, interdum odio. Mauris pretium fermentum nisi, nec vehicula urna dapibus id. Ut condimentum consectetur lacus, nec iaculis augue commodo vitae. Donec sit amet sapien orci. Praesent nec ante vel nisi ullamcorper vulputate. Sed ut quam pulvinar lacus aliquet tincidunt.</Typography>
+                    <Typography className={classes.cuerpo}  align='left' variant="subtitle1">Hola, soy Dagoberto Ruminot Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu elit ut orci eleifend rutrum at vel tellus. Nullam sed euismod diam, sed iaculis neque. Morbi sollicitudin odio auctor, dictum nisi ac, interdum odio. Mauris pretium fermentum nisi, nec vehicula urna dapibus id. Ut condimentum consectetur lacus, nec iaculis augue commodo vitae. Donec sit amet sapien orci. Praesent nec ante vel nisi ullamcorper vulputate. Sed ut quam pulvinar lacus aliquet tincidunt.</Typography>
 
                 </Grid>
 

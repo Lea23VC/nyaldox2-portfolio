@@ -17,9 +17,7 @@ import { useTheme } from '@material-ui/core/styles';
 
 import Switch from '@material-ui/core/Switch';
 
-
-
-
+import Brightness4Icon from '@material-ui/icons/Brightness4';
 
 function HideOnScroll(props) {
   const { children } = props
@@ -51,13 +49,14 @@ const useStyles = makeStyles((theme) =>
     },
 
     appbar: {
-      backgroundColor: 'black'
+      
     },
     boton: {
       fontFamily: 'Supernett-cn',
-      color: "white",
+      color: 'inherit',
+      
       fontSize: "20px",
-      backgroundColor: "black",
+      
       marginRight: '20px',
 
       '&:hover': {
@@ -101,19 +100,15 @@ function scrollToTop() {
 
 
 
-export default function HeadBar() {
+export default function HeadBar({onToggleDark}) {
 
   
 
-
-
-  const changeTheme = () => {  // function to set state
-    if (themeSelected === "primary") setThemeSelected("secondary");
-    else setThemeSelected("primary");
-  };
-
+  const tema = useTheme();
 
   const classes = useStyles();
+
+  console.log("color main: " + tema.palette.primary.main)
 
   return (
 
@@ -123,7 +118,7 @@ export default function HeadBar() {
       <div className={classes.root}>
 
         <HideOnScroll>
-          <AppBar className={classes.appbar} position="fixed">
+          <AppBar className={classes.appbar} position="fixed" color='primary' >
             <Toolbar>
               <IconButton onClick={scrollToTop} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                 <Image
@@ -139,20 +134,18 @@ export default function HeadBar() {
                 Nyaldox2
             </Typography>
 
-              <IconButton   //icon button with onClick handler
+              <IconButton     //icon button with onClick handler
                 className={classes.menuButton}
                 color="inherit"
                 aria-label="open drawer"
-                onClick={() => {
-                  changeTheme();
-                }}
+                onClick={onToggleDark}
               >
-                <SwapHorizIcon />
+                <Brightness4Icon />
               </IconButton>
 
 
 
-              <Button onClick={scrollToForm} className={classes.boton} >Info</Button>
+              <Button onClick={scrollToForm} className={classes.boton}  >Info</Button>
               <Button className={classes.boton} >CV</Button>
               <Button className={classes.boton} >Ilustraciones</Button>
               <Button className={classes.boton} >Animaciones</Button>
