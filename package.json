@@ -14,6 +14,7 @@
     "@material-ui/styles": "^4.11.3",
     "@sergeymyssak/nextjs-sitemap": "^1.1.1",
     "axios": "^0.21.1",
+    "gitmoji-cli": "^4.0.0",
     "isomorphic-fetch": "^3.0.0",
     "localstorage-polyfill": "^1.0.1",
     "lodash-es": "^4.17.21",
