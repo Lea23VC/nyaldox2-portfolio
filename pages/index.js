@@ -57,77 +57,6 @@ export default function Home(imgs) {
 
 
 
- const darkTheme = createMuiTheme({
-  palette: {
-    type: "dark",
-    background: {
-    default: '#000000'
-   },
-   primary: {
-     main: '#FFFFFF'
-   }
-  },
-
-
-typography: {
-
-fontFamily: 'Supernett-cn',
-},
-});
-
-const lightTheme = createMuiTheme({
-
-  palette: {
-    type: "light",
-    background: {
-      default: '#FFFFFF'
-    },
-    primary: {
-      main: '#000000'
-    }
-  },
-  typography: {
-
-  fontFamily: 'Supernett-cn',
-  },
-
-
-
-
-
-})
-
-  const toggleDarkTheme = () => {
-   
-      if (theme.palette.type == "light") {
-        setTheme(darkTheme)
-      }
-      else {
-        setTheme(lightTheme)
-      }
-    
-  };
-  
-
-  const [theme, setTheme] = useState({
-    palette: {
-      type: "dark",
-      background: {
-      default: '#000000'
-     },
-     primary: {
-       main: '#FFFFFF'
-     }
-    },
-  
-  
-  typography: {
-  
-  fontFamily: 'Supernett-cn',
-  },
-  });
-
-  const muiTheme = createMuiTheme(theme);
 
 
 
@@ -166,10 +95,9 @@ const lightTheme = createMuiTheme({
     <>
 
       <HeadTags />
-      <MuiThemeProvider theme={muiTheme}>
-        <CssBaseline />
+      
 
-        <HeadBar onToggleDark={toggleDarkTheme} />
+        
 
         <animated.div style={props}>
           <First />
@@ -191,7 +119,7 @@ const lightTheme = createMuiTheme({
         </animated.div>
 
 
-      </MuiThemeProvider>
+      
     </>
   )
 }
