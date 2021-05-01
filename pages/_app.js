@@ -23,22 +23,22 @@ export default function App({ Component, pageProps }) {
     palette: {
       type: "dark",
       background: {
-      default: '#000000'
-     },
-     primary: {
-       main: '#FFFFFF'
-     }
+        default: '#000000'
+      },
+      primary: {
+        main: '#FFFFFF'
+      }
     },
-  
-  
-  typography: {
-  
-  fontFamily: 'Supernett-cn',
-  },
+
+
+    typography: {
+
+      fontFamily: 'Supernett-cn',
+    },
   });
-  
+
   const lightTheme = createMuiTheme({
-  
+
     palette: {
       type: "light",
       background: {
@@ -49,49 +49,49 @@ export default function App({ Component, pageProps }) {
       }
     },
     typography: {
-  
-    fontFamily: 'Supernett-cn',
-    },
-  
-  
-  
-  
-  
-  })
-  
-    const toggleDarkTheme = () => {
-     
-        if (theme.palette.type == "light") {
-          setTheme(darkTheme)
-        }
-        else {
-          setTheme(lightTheme)
-        }
-      
-    };
-    
-  
-    const [theme, setTheme] = useState({
-      palette: {
-        type: "dark",
-        background: {
-        default: '#000000'
-       },
-       primary: {
-         main: '#FFFFFF'
-       }
-      },
-    
-    
-    typography: {
-    
-    fontFamily: 'Supernett-cn',
-    },
-    });
-  
-    const muiTheme = createMuiTheme(theme);
 
-    
+      fontFamily: 'Supernett-cn',
+    },
+
+
+
+
+
+  })
+
+  const toggleDarkTheme = () => {
+
+    if (theme.palette.type == "light") {
+      setTheme(darkTheme)
+    }
+    else {
+      setTheme(lightTheme)
+    }
+
+  };
+
+
+  const [theme, setTheme] = useState({
+    palette: {
+      type: "dark",
+      background: {
+        default: '#000000'
+      },
+      primary: {
+        main: '#FFFFFF'
+      }
+    },
+
+
+    typography: {
+
+      fontFamily: 'Supernett-cn',
+    },
+  });
+
+  const muiTheme = createMuiTheme(theme);
+
+
 
 
 
@@ -118,17 +118,17 @@ export default function App({ Component, pageProps }) {
 
     <>
 
-  <MuiThemeProvider theme={muiTheme}>
+      <MuiThemeProvider theme={muiTheme}>
         <CssBaseline />
         <HeadBar onToggleDark={toggleDarkTheme} />
 
-    <Component {...pageProps} />
+        <Component {...pageProps} />
 
-    </MuiThemeProvider>
+      </MuiThemeProvider>
 
     </>
 
-  ) 
+  )
 }
 
 export function reportWebVitals(metric) {
