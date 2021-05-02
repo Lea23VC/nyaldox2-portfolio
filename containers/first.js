@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
             fontSize: "2em"
         },
 
-        [theme.breakpoints.down("xs")]: {
+        [theme.breakpoints.down("sm")]: {
             fontSize: "4vh"
         }
 
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 
         fontFamily: 'Supernett-cn',
         
-        [theme.breakpoints.down("xs")]: {
+        [theme.breakpoints.down("sm")]: {
             fontSize: "3vh"
         }
     },
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "30px",
         color: 'primary',
 
-        [theme.breakpoints.down("xs")]: {
+        [theme.breakpoints.down("sm")]: {
             fontSize: "16px"
         }
     },
@@ -76,6 +76,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function instagram() {
+
+    
+
+
+
+
     const props = useSpring({ opacity: 1, from: { opacity: 0 } })
     const classes = useStyles();
     return (

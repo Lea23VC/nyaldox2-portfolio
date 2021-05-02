@@ -11,12 +11,19 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
 import Image from 'next/image'
 import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
-
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import clsx from 'clsx';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
 
 import { useTheme } from '@material-ui/core/styles';
 
 import Switch from '@material-ui/core/Switch';
-
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 
 function HideOnScroll(props) {
@@ -49,14 +56,14 @@ const useStyles = makeStyles((theme) =>
     },
 
     appbar: {
-      
+
     },
     boton: {
       fontFamily: 'Supernett-cn',
       color: 'inherit',
-      
+
       fontSize: "20px",
-      
+
       marginRight: '20px',
 
       '&:hover': {
@@ -75,6 +82,19 @@ const useStyles = makeStyles((theme) =>
     digitalClock: {
       color: "white",
       fontFamily: 'Supernett-cn',
+
+    },
+
+    desktop: {
+      [theme.breakpoints.down("sm")]: {
+        display: 'none'
+      }
+    },
+    mobile: {
+
+      [theme.breakpoints.up("md")]: {
+        display: 'none'
+      }
 
     }
 
@@ -100,9 +120,53 @@ function scrollToTop() {
 
 
 
-export default function HeadBar({onToggleDark}) {
+export default function HeadBar({ onToggleDark }) {
 
-  
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <div
+      className={clsx(classes.list, {
+        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+      })}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        {['INFO', 'CV', 'ILUSTRACIONES', 'ANIMACIONES', 'REDES SOCIALES'].map((text, index) => (
+          <ListItem button key={text}>
+            {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      {/* <List>
+        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List> */}
+    </div>
+  );
+
+
 
   const tema = useTheme();
 
@@ -132,7 +196,9 @@ export default function HeadBar({onToggleDark}) {
 
               <Typography variant="h6" className={classes.title}>
                 Nyaldox2
-            </Typography>
+              </Typography>
+
+
 
               <IconButton     //icon button with onClick handler
                 className={classes.menuButton}
@@ -144,12 +210,42 @@ export default function HeadBar({onToggleDark}) {
               </IconButton>
 
 
+              <div className={classes.desktop}>
+                <Button onClick={scrollToForm} className={classes.boton}  >Info</Button>
+                <Button className={classes.boton} >CV</Button>
+                <Button className={classes.boton} >Ilustraciones</Button>
+                <Button className={classes.boton} >Animaciones</Button>
+                <Button className={classes.boton} >Redes Sociales</Button>
+              </div>
 
-              <Button onClick={scrollToForm} className={classes.boton}  >Info</Button>
-              <Button className={classes.boton} >CV</Button>
-              <Button className={classes.boton} >Ilustraciones</Button>
-              <Button className={classes.boton} >Animaciones</Button>
-              <Button className={classes.boton} >Redes Sociales</Button>
+              <div className={classes.mobile}>
+                
+                  <React.Fragment key='right'>
+
+                    <IconButton onClick={toggleDrawer('right', true)}
+                    color="inherit">
+
+                      <MenuIcon/>
+
+
+                    </IconButton>
+
+
+                    
+                    <SwipeableDrawer
+                      anchor='right'
+                      open={state['right']}
+                      onClose={toggleDrawer('right', false)}
+                      onOpen={toggleDrawer('right', true)}
+                    >
+                      {list('right')}
+                    </SwipeableDrawer>
+                  </React.Fragment>
+                
+              </div>
+
+
+
             </Toolbar>
           </AppBar>
         </HideOnScroll>
