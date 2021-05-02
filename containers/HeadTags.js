@@ -11,8 +11,6 @@ export default function HeadTags() {
 
             <Head>
 
-
-
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
 
 
@@ -36,33 +34,6 @@ export default function HeadTags() {
 
                 <title>Daguito</title>
 
-
-
-
-
-
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" />
-
-                <link rel="shortcut icon" href="/images/favicon.png" />
-                <link
-                    rel="preload"
-                    href="/fonts/Supernett-cn/Supernettcn-Condensed.otf"
-                    as="font"
-                    crossOrigin=""
-                />
-                <link
-                    rel="preload"
-                    href="/fonts/Supernett-cn/Supernettcn-LightCondensed.otf"
-                    as="font"
-                    crossOrigin=""
-                />
-
-                <link
-                    rel="preload"
-                    href="/fonts/Supernett-cn/Supernettcn-BoldCondensed.otf"
-                    as="font"
-                    crossOrigin=""
-                />
 
 
 

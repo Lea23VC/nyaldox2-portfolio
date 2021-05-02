@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 //import theme from '../src/theme';
 
-
+import HeadTags from '../containers/HeadTags'
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
@@ -15,7 +15,7 @@ const theme = createMuiTheme({
       primary: "#ffffff"
     }
   }
-  
+
 });
 
 
@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
 
-        
+
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
@@ -43,20 +43,41 @@ export default class MyDocument extends Document {
           `,
             }}
           />
-        
-          {/* PWA primary color */}
-          <meta name="theme-color" content={theme.palette.primary.main} />
+
+
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" />
+
+          <link rel="shortcut icon" href="/images/favicon.png" />
           <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="preload"
+            href="/fonts/Supernett-cn/Supernettcn-Condensed.otf"
+            as="font"
+            crossOrigin=""
           />
+          <link
+            rel="preload"
+            href="/fonts/Supernett-cn/Supernettcn-LightCondensed.otf"
+            as="font"
+            crossOrigin=""
+          />
+
+          <link
+            rel="preload"
+            href="/fonts/Supernett-cn/Supernettcn-BoldCondensed.otf"
+            as="font"
+            crossOrigin=""
+          />
+
+
         </Head>
+
+
         <body>
-          <Main /> 
+          <Main />
           <NextScript />
         </body>
       </Html>
-    ); 
+    );
   }
 }
 
