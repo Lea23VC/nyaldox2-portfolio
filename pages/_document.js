@@ -52,20 +52,20 @@ export default class MyDocument extends Document {
             rel="preload"
             href="/fonts/Supernett-cn/Supernettcn-Condensed.otf"
             as="font"
-            crossOrigin=""
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             href="/fonts/Supernett-cn/Supernettcn-LightCondensed.otf"
             as="font"
-            crossOrigin=""
+            crossOrigin="anonymous"
           />
 
           <link
             rel="preload"
             href="/fonts/Supernett-cn/Supernettcn-BoldCondensed.otf"
             as="font"
-            crossOrigin=""
+            crossOrigin="anonymous"
           />
 
 

@@ -91,9 +91,9 @@ export default function instagram() {
 
                 <Grid item xs={12}>
 
-                    <Typography className={classes.title} variant="h1" >Dagoberto <div className={classes.a}>Ruminot</div> <div className={classes.a}>L.</div></Typography>
+                    <Typography className={classes.title} variant="h1" >Aldo <div className={classes.a}>Cabrera</div> <div className={classes.a}>A.</div></Typography>
 
-                    <Typography className={classes.subtitle} variant="h2" >Animador Digital / Ilustrador / Electricista</Typography>
+                    <Typography className={classes.subtitle} variant="h2" >Animador Digital / Ilustrador</Typography>
 
                     <Pull />
                 </Grid>

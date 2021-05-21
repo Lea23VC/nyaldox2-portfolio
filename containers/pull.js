@@ -50,6 +50,7 @@ export default function Pull() {
                 alt="Picture of the author"
                 width={761 * 0.5}
                 height={807 * 0.5}
+                priority={true}
               />
             </animated.div>
             

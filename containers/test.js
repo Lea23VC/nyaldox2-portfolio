@@ -105,6 +105,7 @@ export default function parallax() {
         alt="Picture of the author"
         width={540}
         height={540}
+        priority={true}
       />
       
      
@@ -119,6 +120,7 @@ export default function parallax() {
         alt="Picture of the author"
         width={540}
         height={540}
+        priority={true}
       />
       
      
@@ -133,6 +135,7 @@ export default function parallax() {
         alt="Picture of the author"
         width={540}
         height={540}
+        priority={true}
       />
       
       
@@ -147,6 +150,7 @@ export default function parallax() {
         alt="Picture of the author"
         width={540}
         height={540}
+        priority={true}
       />
 
       </animated.div>
@@ -160,6 +164,7 @@ export default function parallax() {
         alt="Picture of the author"
         width={540}
         height={540}
+        priority={true}
       />
       
       
@@ -175,6 +180,7 @@ export default function parallax() {
         alt="Picture of the author"
         width={540}
         height={540}
+        priority={true}
       />
       
       </animated.div>

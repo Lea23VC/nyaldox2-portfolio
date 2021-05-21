@@ -96,7 +96,13 @@ const useStyles = makeStyles((theme) =>
         display: 'none'
       }
 
-    }
+    },
+    list: {
+      width: 200,
+    },
+    fullList: {
+      width: 'auto',
+    },
 
 
 
@@ -232,14 +238,7 @@ export default function HeadBar({ onToggleDark }) {
 
 
                     
-                    <SwipeableDrawer
-                      anchor='right'
-                      open={state['right']}
-                      onClose={toggleDrawer('right', false)}
-                      onOpen={toggleDrawer('right', true)}
-                    >
-                      {list('right')}
-                    </SwipeableDrawer>
+                    
                   </React.Fragment>
                 
               </div>
@@ -249,6 +248,14 @@ export default function HeadBar({ onToggleDark }) {
             </Toolbar>
           </AppBar>
         </HideOnScroll>
+        <SwipeableDrawer
+                      anchor='right'
+                      open={state['right']}
+                      onClose={toggleDrawer('right', false)}
+                      onOpen={toggleDrawer('right', true)}
+                    >
+                      {list('right')}
+                    </SwipeableDrawer>
 
       </div>
 
