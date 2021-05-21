@@ -156,6 +156,7 @@ export default function instagram() {
                             alt="Picture of the author"
                             layout="fill"
                             objectFit="cover"
+                            priority={true}
                         />
 
                     </animated.div>
