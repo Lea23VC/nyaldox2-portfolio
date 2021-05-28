@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) =>
       '&:hover': {
 
         opacity: 0.7,
-        fontSize: '120%'
+        
 
 
       },

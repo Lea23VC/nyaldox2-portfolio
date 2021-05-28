@@ -17,7 +17,7 @@ export default function HeadTags() {
                 <meta name="title" content="Portafolio de Aldo Cabrera Arratia" />
                 <meta name="description" content="Hola soy Aldo Cabrera" />
 
-
+                <meta name="keywords" content="Aldo Cabrera, Aldo Cabrera Arratia, Animador Digital, Ilustración, Santo Tomas, Mampato, Pokémon, Instagram, arte, comisiones, Chile, Ilustración, portafolio de arte, portafolio, nyaldox2, chitowii" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://daguito.online/" />
                 <meta property="og:title" content="Portafolio de Aldo Cabrera Arratia" />
