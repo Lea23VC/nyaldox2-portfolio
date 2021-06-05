@@ -1,9 +1,11 @@
+import { createStyles, makeStyles, createMuiTheme } from '@material-ui/core/styles';
 
 import React, { useEffect, useState } from "react";
 import { useSpring, animated } from 'react-spring'
-import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
 import axios from 'axios';
 import Test from '../containers/test'
+import Box from '@material-ui/core/Box';
 
 import First from '../containers/first'
 import Instagram from '../containers/instagram'
@@ -27,7 +29,24 @@ import HeadBar from '../containers/appbar'
 
 import GalleryArt from '../containers/galleryArt'
 
+const useStyles = makeStyles((theme) =>
+  createStyles({
+    root: {
 
+      
+      backgroundColor: theme.palette.primary.main,
+      color:  theme.palette.background.default,
+
+      transition: "background-color .5s, color .5s",
+      
+    },
+
+
+  }),
+
+
+
+);
 
 
 
@@ -87,7 +106,7 @@ export default function Home(imgs) {
   const propsDonut = useSpring({ value: 100, from: { value: 0 } })
   const [flipped, set] = useState(false)
 
-
+  const classes = useStyles();
 
 
   return (
@@ -95,7 +114,10 @@ export default function Home(imgs) {
     <>
 
       <HeadTags />
-      
+
+
+
+        <Box className={classes.root}>
 
         
 
@@ -117,6 +139,8 @@ export default function Home(imgs) {
           <Instagram dato="awoooo" />
 
         </animated.div>
+
+        </Box>
 
 
       

@@ -150,9 +150,9 @@ img {
 }
 
 .script-bf-box { /*ESTO ES PARA EL REACT SPRING */
-  width: 150px;
+  
   height: 400px;
-  background: white;
+  
   margin: 5px;
   will-change: transform;
 
@@ -170,7 +170,7 @@ img {
 @media only screen and (max-width: 600px) {
 
   .script-bf-box { 
-    width: 100px;
+    
     height: 266px;
     
     

@@ -3,6 +3,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Image from 'next/image'
 import Typography from '@material-ui/core/Typography'
+import Box from '@material-ui/core/Box';
 
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
@@ -52,10 +53,10 @@ export default function instagram(caca) {
 
       <Grid container className={classes.containerIm} direction="column" justify="center" alignItems="center"> 
         <Grid item xs={12} md={12}>
-          <Paper variant="outlined" className={classes.instag}>
+          <Box variant="outlined" className={classes.instag}>
           <animated.div style={props}><Typography className={classes.title} align="center" variant="h3" >Instagram</Typography></animated.div>
           <InstagramFeed token={insta}  counter="12"/>
-          </Paper>
+          </Box>
         </Grid>
       </Grid>
     </>

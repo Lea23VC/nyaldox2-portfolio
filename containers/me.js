@@ -60,6 +60,12 @@ const useStyles = makeStyles((theme) => ({
     cuerpo: {
         fontFamily: 'Supernett-cn',
         fontSize: '120%'
+    },
+    meText: {
+        padding: theme.spacing(5),
+        [theme.breakpoints.down("sm")]: {
+            padding: theme.spacing(5,0,5),
+        }
     }
 }));
 
@@ -71,12 +77,12 @@ export default function instagram() {
         <>
             <Grid container className={classes.fullGrid} spacing={0} justify="center" alignItems="center">
 
-                <Grid className={"wow bounceInUp"} item xs={12} sm={4} md={6} lg={4}>
+                <Grid className={"wow bounceInUp"} item xs={12} sm={12} md={12} lg={4}>
                     <SpringReset />
 
                 </Grid>
 
-                <Grid item xs={12} sm={8} md={6} lg={8}>
+                <Grid item xs={12} sm={12} md={12} lg={8} className={classes.meText}>
                     
                     <Typography className={classes.title} variant='h1'> Sobre mí</Typography>
                     <Typography className={classes.cuerpo}  align='left' variant="subtitle1">Hola, soy Aldo Cabrera Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu elit ut orci eleifend rutrum at vel tellus. Nullam sed euismod diam, sed iaculis neque. Morbi sollicitudin odio auctor, dictum nisi ac, interdum odio. Mauris pretium fermentum nisi, nec vehicula urna dapibus id. Ut condimentum consectetur lacus, nec iaculis augue commodo vitae. Donec sit amet sapien orci. Praesent nec ante vel nisi ullamcorper vulputate. Sed ut quam pulvinar lacus aliquet tincidunt.</Typography>

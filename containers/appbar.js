@@ -57,6 +57,11 @@ const useStyles = makeStyles((theme) =>
 
     appbar: {
 
+      backgroundColor: theme.palette.background.default,
+      color: theme.palette.primary.main,
+
+      transition: 'background-color .5s'
+
     },
     boton: {
       fontFamily: 'Supernett-cn',

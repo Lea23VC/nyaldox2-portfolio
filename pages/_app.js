@@ -14,29 +14,10 @@ import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/sty
 
 import HeadBar from '../containers/appbar'
 
+import { parseCookies, setCookie, destroyCookie } from 'nookies'
 
 
-export default function App({ Component, pageProps }) {
-
-
-  const darkTheme = createMuiTheme({
-    palette: {
-      type: "dark",
-      background: {
-        default: '#000000'
-      },
-      primary: {
-        main: '#FFFFFF'
-      }
-    },
-
-
-    typography: {
-
-      fontFamily: 'Supernett-cn',
-    },
-  });
-
+function GetTheme(theme) {
   const lightTheme = createMuiTheme({
 
     palette: {
@@ -59,19 +40,7 @@ export default function App({ Component, pageProps }) {
 
   })
 
-  const toggleDarkTheme = () => {
-
-    if (theme.palette.type == "light") {
-      setTheme(darkTheme)
-    }
-    else {
-      setTheme(lightTheme)
-    }
-
-  };
-
-
-  const [theme, setTheme] = useState({
+  const darkTheme = createMuiTheme({
     palette: {
       type: "dark",
       background: {
@@ -88,6 +57,51 @@ export default function App({ Component, pageProps }) {
       fontFamily: 'Supernett-cn',
     },
   });
+
+
+
+  if (theme == 'lightTheme') {
+    return lightTheme
+  }
+  else {
+    return darkTheme
+  }
+
+}
+
+
+export default function App({ Component, pageProps }) {
+  const cookies = parseCookies()
+  console.log( cookies.theme )
+
+  
+
+
+  const toggleDarkTheme = () => {
+
+    if (cookies.theme == "lightTheme") {
+      setCookie(null, 'theme', 'darkTheme')
+      console.log("a")
+      setTheme(GetTheme('darkTheme')) //si uso GetTheme con el valor de la cookie luego de asignarla, por alguna razón no funciona hasta el segundo click
+    }
+    else {
+      setCookie(null, 'theme', 'lightTheme')
+      console.log("b")
+      setTheme(GetTheme('lightTheme'))
+    }
+
+  };
+  
+
+  if (cookies.theme==null){
+    setCookie(null, 'theme', 'darkTheme')
+    
+    
+  }
+  const [theme, setTheme] = useState(GetTheme(cookies.theme));
+
+
+
 
   const muiTheme = createMuiTheme(theme);
 
@@ -122,7 +136,7 @@ export default function App({ Component, pageProps }) {
         <CssBaseline />
         <HeadBar onToggleDark={toggleDarkTheme} />
 
-        <Component {...pageProps} />
+        <Component  {...pageProps} />
 
       </MuiThemeProvider>
 

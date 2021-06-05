@@ -77,6 +77,15 @@ const useStyles = makeStyles((theme) => ({
     },
     buttonGrid: {
 
+    },
+    itemSpring: {
+        "& $ball": {
+            borderRadius: "20px",
+        }
+    },
+
+    ball: {
+        borderRadius: "15px",
     }
 
 
@@ -88,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function instagram() {
-    
+
     const props = useSpring({ opacity: 1, from: { opacity: 0 } })
     const classes = useStyles();
     const { radians } = useSpring({
@@ -141,15 +150,15 @@ export default function instagram() {
 
     return (
 
-        <Grid container justify="center" alignItems="center" >
+        <Grid container justify="center" alignItems="center" spacing={3}>
             {
                 springImages.map((data) =>
 
 
-
+                    <Grid item xs={4} className={classes.itemSpring}>
                     <animated.div key={data.key} className="script-bf-box" style={ {backgroundColor: 'red' }, { transform: radians.to(interp(data.key)) } }>
 
-
+                        
                         <Image
                             className={classes.ball}
                             src={data.image}
@@ -158,13 +167,15 @@ export default function instagram() {
                             objectFit="cover"
                             priority={true}
                         />
+                        
 
                     </animated.div>
+                    </Grid>
 
 
-                )
-            }
-        </Grid>
+    )
+}
+        </Grid >
 
 
     )

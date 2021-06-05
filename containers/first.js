@@ -50,9 +50,10 @@ const useStyles = makeStyles((theme) => ({
 
     boton: {
         fontFamily: 'Supernett-cn',
-        color: 'inherit',
+        color: theme.palette.background.default,
+        borderColor: theme.palette.background.default,
         fontSize: "30px",
-        color: 'primary',
+        
 
         [theme.breakpoints.down("sm")]: {
             fontSize: "16px"
@@ -67,6 +68,7 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(0.5),
     },
     buttonGrid: {
+        
 
     }
 
@@ -91,7 +93,7 @@ export default function instagram() {
 
                 <Grid item xs={12}>
 
-                    <Typography className={classes.title} variant="h1" >Aldo <div className={classes.a}>Cabrera</div> <div className={classes.a}>A.</div></Typography>
+                    <Typography className={classes.title} variant="h1" >Aldo <div className={classes.a}>Cabrera</div> <div className={classes.a}>Arratia</div></Typography>
 
                     <Typography className={classes.subtitle} variant="h2" >Animador Digital / Ilustrador</Typography>
 
@@ -99,7 +101,7 @@ export default function instagram() {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <ButtonGroup color="primary" size="small" aria-label="small outlined button group">
+                    <ButtonGroup className={classes.buttonGrid}  size="small" aria-label="small outlined button group">
                         <Button href="#me" className={classes.boton} >Info</Button>
                         <Button className={classes.boton} >CV</Button>
                         <Button className={classes.boton} >Ilustraciones</Button>
