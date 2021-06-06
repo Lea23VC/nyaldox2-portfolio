@@ -84,9 +84,9 @@ export default function Home(imgs) {
 
 
 
-  useEffect(() => {
+  // useEffect(() => {
 
-  }, []);
+  // }, []);
 
 
   if (typeof window !== "undefined") { //client-side rendering para api que no soporten server-side
@@ -130,7 +130,7 @@ export default function Home(imgs) {
         </section>
 
 
-        <GalleryArt data={imgs.data.data.images} />
+        <GalleryArt data={imgs.images.data.images} />
 
         <animated.div style={props}>
 
@@ -148,7 +148,7 @@ export default function Home(imgs) {
   )
 }
 
-Home.getInitialProps = async function () {
+export async function getServerSideProps() {
 
   var clienteID = '0411e68ef4ecf4e'
   const res = await axios.get("https://api.imgur.com/3/album/dnOEw0A", {
@@ -161,7 +161,9 @@ Home.getInitialProps = async function () {
   const data = await res.data;
   console.log(`Show data fetched. Count: ${data.length}`);
   return {
-    data
+    props: {
+      images: data,
+    },
   };
 };
 

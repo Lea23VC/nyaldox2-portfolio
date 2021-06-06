@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography'
 
 import Paper from '@material-ui/core/Paper'
 
-const useStyles = makeStyles({ 
+const useStyles = makeStyles((theme) => ({
 
 
   
@@ -67,7 +67,8 @@ const useStyles = makeStyles({
     
     display: "inline-block",
     position: "relative",
-    backgroundColor: "white",
+    backgroundColor: theme.palette.background.default,
+    transition: "background-color .3s",
     borderRadius: "20px",
     overflow:'hidden',
     
@@ -78,7 +79,7 @@ const useStyles = makeStyles({
 
   
 
-});
+}));
 
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]

@@ -3,6 +3,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 
 import Typography from '@material-ui/core/Typography'
+import Link from 'next/link'
 
 
 import Grid from '@material-ui/core/Grid'
@@ -57,6 +58,11 @@ const useStyles = makeStyles((theme) => ({
 
         [theme.breakpoints.down("sm")]: {
             fontSize: "16px"
+        },
+
+        "& a": {
+            textDecoration: "none",
+            color: "inherit",
         }
     },
 
@@ -70,6 +76,15 @@ const useStyles = makeStyles((theme) => ({
     buttonGrid: {
         
 
+    },
+    link: {
+        color: "inherit",
+        
+        "&:hover": {
+            textDecoration: 'none',
+        }
+
+       
     }
 
 
@@ -103,7 +118,7 @@ export default function instagram() {
                 <Grid item xs={12}>
                     <ButtonGroup className={classes.buttonGrid}  size="small" aria-label="small outlined button group">
                         <Button href="#me" className={classes.boton} >Info</Button>
-                        <Button className={classes.boton} >CV</Button>
+                        <Button className={classes.boton} ><Link  href="/cv" passHref >CV</Link></Button>
                         <Button className={classes.boton} >Ilustraciones</Button>
                         <Button className={classes.boton} >Animaciones</Button>
                         <Button className={classes.boton} >Redes Sociales</Button>

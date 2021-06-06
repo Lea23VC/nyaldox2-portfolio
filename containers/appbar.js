@@ -20,6 +20,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import Link from 'next/link'
 
 import { useTheme } from '@material-ui/core/styles';
 
@@ -81,7 +82,9 @@ const useStyles = makeStyles((theme) =>
 
       [theme.breakpoints.down("xs")]: {
         fontSize: "16px"
-      }
+      },
+
+      
     },
 
     digitalClock: {
@@ -93,7 +96,11 @@ const useStyles = makeStyles((theme) =>
     desktop: {
       [theme.breakpoints.down("sm")]: {
         display: 'none'
-      }
+      },
+      "& a": {
+        textDecoration: "none",
+        color: "inherit",
+    }
     },
     mobile: {
 
@@ -195,7 +202,8 @@ export default function HeadBar({ onToggleDark }) {
         <HideOnScroll>
           <AppBar className={classes.appbar} position="fixed" color='primary' >
             <Toolbar>
-              <IconButton onClick={scrollToTop} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <Link href='/' passHref>
+              <a><IconButton  edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                 <Image
                   className={classes.ball}
                   src="/images/logo_nyaldox2.png"
@@ -203,7 +211,7 @@ export default function HeadBar({ onToggleDark }) {
                   width={48}
                   height={50}
                 />
-              </IconButton>
+              </IconButton></a></Link>
 
               <Typography variant="h6" className={classes.title}>
                 Nyaldox2
@@ -223,7 +231,7 @@ export default function HeadBar({ onToggleDark }) {
 
               <div className={classes.desktop}>
                 <Button onClick={scrollToForm} className={classes.boton}  >Info</Button>
-                <Button className={classes.boton} >CV</Button>
+                <Link href="/cv"><a><Button className={classes.boton} >CV</Button></a></Link>
                 <Button className={classes.boton} >Ilustraciones</Button>
                 <Button className={classes.boton} >Animaciones</Button>
                 <Button className={classes.boton} >Redes Sociales</Button>
