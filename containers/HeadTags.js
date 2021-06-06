@@ -22,8 +22,8 @@ export default function HeadTags() {
                 <meta property="og:url" content="https://daguito.online/" />
                 <meta property="og:title" content="Nyaldox2 - Portafolio de Aldo Cabrera Arratia" />
                 <meta property="og:description" content="Hola soy Aldo Cabrera" />
-                <meta property="og:image" content="" />
-
+                
+                <meta property="og:image" content="/images/logo_nyaldox2.png" />
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://daguito.online/" />
