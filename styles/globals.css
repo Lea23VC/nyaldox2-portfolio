@@ -62,7 +62,7 @@ a {
 
 @font-face {
   font-family: "Supernett-cn";
-  src: url("/fonts/Supernett-cn/Supernettcn-LightCondensed.otf");
+  src: url("https://nyaldox2.s3.us-east-2.amazonaws.com/Supernettcn-LightCondensed.otf");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -70,7 +70,7 @@ a {
 
 @font-face {
   font-family: "Supernett-cn";
-  src: url("/fonts/Supernett-cn/Supernettcn-LightCondItalic.otf");
+  src: url("https://nyaldox2.s3.us-east-2.amazonaws.com/Supernettcn-LightCondItalic.otf");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -78,7 +78,7 @@ a {
 
 @font-face {
   font-family: "Supernett-cn";
-  src: url("/fonts/Supernett-cn/Supernettcn-Condensed.otf");
+  src: url("https://nyaldox2.s3.us-east-2.amazonaws.com/Supernettcn-Condensed.otf");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -86,7 +86,7 @@ a {
 
 @font-face {
   font-family: "Supernett-cn";
-  src: url("/fonts/Supernett-cn/Supernettcn-CondensedItalic.otf");
+  src: url("https://nyaldox2.s3.us-east-2.amazonaws.com/Supernettcn-CondensedItalic.otf");
   font-style: italic;
   font-weight: 500;
   font-display: swap;
@@ -94,7 +94,7 @@ a {
 
 @font-face {
   font-family: "Supernett-cn";
-  src: url("/fonts/Supernett-cn/Supernettcn-BoldCondensed.otf");
+  src: url("https://nyaldox2.s3.us-east-2.amazonaws.com/Supernettcn-BoldCondensed.otf");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -102,7 +102,7 @@ a {
 
 @font-face {
   font-family: "Supernett-cn";
-  src: url("/fonts/Supernett-cn/Supernettcn-BoldCondItalic.otf");
+  src: url("https://nyaldox2.s3.us-east-2.amazonaws.com/Supernettcn-BoldCondItalic.otf");
   font-style: italic;
   font-weight: 700;
   font-display: swap;

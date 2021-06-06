@@ -50,20 +50,41 @@ export default class MyDocument extends Document {
           <link rel="shortcut icon" href="/images/favicon.png" />
           <link
             rel="preload"
-            href="/fonts/Supernett-cn/Supernettcn-Condensed.otf"
+            href="https://nyaldox2.s3.us-east-2.amazonaws.com/Supernettcn-LightCondItalic.otf"
             as="font"
             crossOrigin="anonymous"
           />
           <link
             rel="preload"
-            href="/fonts/Supernett-cn/Supernettcn-LightCondensed.otf"
+            href="https://nyaldox2.s3.us-east-2.amazonaws.com/Supernettcn-LightCondensed.otf"
             as="font"
             crossOrigin="anonymous"
           />
 
           <link
             rel="preload"
-            href="/fonts/Supernett-cn/Supernettcn-BoldCondensed.otf"
+            href="https://nyaldox2.s3.us-east-2.amazonaws.com/Supernettcn-Condensed.otf"
+            as="font"
+            crossOrigin="anonymous"
+          />
+
+        <link
+            rel="preload"
+            href="https://nyaldox2.s3.us-east-2.amazonaws.com/Supernettcn-CondensedItalic.otf"
+            as="font"
+            crossOrigin="anonymous"
+          />
+
+        <link
+            rel="preload"
+            href="https://nyaldox2.s3.us-east-2.amazonaws.com/Supernettcn-BoldCondensed.otf"
+            as="font"
+            crossOrigin="anonymous"
+          />
+
+<link
+            rel="preload"
+            href="https://nyaldox2.s3.us-east-2.amazonaws.com/Supernettcn-BoldCondItalic.otf"
             as="font"
             crossOrigin="anonymous"
           />

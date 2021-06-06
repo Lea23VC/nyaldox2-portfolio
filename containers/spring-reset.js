@@ -152,10 +152,10 @@ export default function instagram() {
 
         <Grid container justify="center" alignItems="center" spacing={3}>
             {
-                springImages.map((data) =>
+                springImages.map((data, index) =>
 
 
-                    <Grid item xs={4} className={classes.itemSpring}>
+                    <Grid item xs={4} className={classes.itemSpring} key={index}>
                     <animated.div key={data.key} className="script-bf-box" style={ {backgroundColor: 'red' }, { transform: radians.to(interp(data.key)) } }>
 
                         
